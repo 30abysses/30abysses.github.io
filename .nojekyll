@@ -1,0 +1,15 @@
+# Why this file?
+
+The presence of this file `.nojekyll` turns off GitHub Pages' Jekyll
+integration.
+
+## Reference
+
+> ...
+> you can include a .nojekyll file in the root path to turn off Jekyll
+> ...
+> If you add a .nojekyll file, your source files will be published
+> without any modifications. Do not use this option if you want Jekyll
+> to process them.
+
+https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/
