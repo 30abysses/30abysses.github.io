@@ -1,0 +1,8 @@
+div.center-text {
+    text-align: center;
+}
+
+div.center-block {
+    margin: auto;
+    max-width: 800px;
+}
