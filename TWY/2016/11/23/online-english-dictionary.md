@@ -22,7 +22,7 @@
 # 詳細比較
 
 
-##  Google 字典
+## Google 字典
 
 網址： [https://www.google.com/][1]
 
@@ -51,7 +51,7 @@
 
 
 ---
-##  Google 翻譯
+## Google 翻譯
 
 網址： [https://translate.google.com/][2]
 
@@ -79,7 +79,7 @@
 
 
 ---
-##  Dictionary.com
+## Dictionary.com
 
 網址： [http://www.dictionary.com/][3]
 
@@ -146,7 +146,7 @@
 
 
 ---
-##  Urban Dictionary
+## Urban Dictionary
 
 網址： [http://www.urbandictionary.com/][7]
 

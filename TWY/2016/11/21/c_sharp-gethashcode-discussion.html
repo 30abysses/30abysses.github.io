@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>C# `GetHashCode()`  &#x8A0E;&#x8AD6; @ TWY 2016-11-21 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / <a href="./index.html">21</a> / C# `GetHashCode()`  &#x8A0E;&#x8AD6;</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM.</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1>C# <code>GetHashCode()</code>  討論</h1>
+<p>這裡整理了與網友的討論；為了閱讀性，有些語句有重組過。</p>
+<p>來源：</p>
+<ul>
+<li><a href="https://www.ptt.cc/bbs/Soft_Job/M.1479825273.A.2EF.html">https://www.ptt.cc/bbs/Soft_Job/M.1479825273.A.2EF.html</a></li>
+</ul>
+<hr />
+<blockquote>
+<p>robler @ptt.cc</p>
+<p>一般人要有需要比較物件時通常會試者實作IComparable介面
+因為GetHashCode很難用來實際比較物件XD</p>
+</blockquote>
+<p>是的， <code>GetHashCode()</code>  是協助比較物件「相同、相異」，主要應用在與 hash
+有關的地方； <code>IComparable</code> 則是除了比較相同、相異之外，更進一步有
+「順序(order)」 的意味，更適合應用在「排序」上。</p>
+<p>易言之，兩者有微妙的差異。 :)</p>
+<hr />
+<blockquote>
+<p>erspicu @ptt.cc</p>
+<p>比較好奇的是取得物件的HASH 能夠應用在哪些問題上?</p>
+</blockquote>
+<p>在需要測試物件「相等性(equality)」的場合， <code>GetHashCode()</code>  就 <em>有可能</em>
+派上用場。易言之，</p>
+<blockquote>
+<p>GetHashCode() ≠  測試物件相等性(equality)的終極解決方案</p>
+</blockquote>
+<p>更完整的說法為</p>
+<blockquote>
+<p>GetHashCode() 這樣的設計雖然增加了整體複雜度，但它開拓了一塊空間，提供
+改善「測試物件相等性(equality)」的效能的機會與可能性</p>
+</blockquote>
+<p>例如，在
+<a href="https://github.com/dotnet/coreclr/blob/master/src/mscorlib/src/System/Collections/Generic/Dictionary.cs"><code>System.Collections.Generic.Dictionary&lt;TKey,TValue&gt;</code> 的原始碼</a>中就可
+以看到許多使用 <code>GetHashCode()</code>  的場合。</p>
+<p>若仔細去追 .NET core  的原始碼，會發現 hash, hash table （以及衍生出的
+set, hash set, dictionary, ...) 通通都依賴適當的 caching, 適當的 hash 演
+算法選擇，才能作到那些資料結構宣稱的各種 big-O  時間界限(boundary)；而這
+些資料結構更是廣泛地被 .NET Framework 其他部分, 例如 <code>LINQ</code> 使用。</p>
+<p>例如，雖然 C# <code>Dictionary</code>  此類別的官方文件宣稱：</p>
+<blockquote>
+<p>Getting or setting the value of this property approaches an O(1)
+operation</p>
+<p>存、取值動作所花時間趨近於 O(1) 。</p>
+</blockquote>
+<p>但從原始碼可以看出，事實上那非常依賴放進 <code>Dictionary</code> 裡的物件類別的
+<code>GetHashCode()</code>  實作。</p>
+<p>身為 <code>System.Object</code>  上最古老的四人之一， <code>GetHashCode()</code>  被所有類別繼
+承著；若對軟體業產業上游、 framework design 這方向有興趣的話，這裡面是有
+極多用血汗淚堆屍堆出來的知識可挖的 :D</p>
+<hr />
+<blockquote>
+<p>TSW @ptt.cc</p>
+<p>雖然我覺得沒什麼使用上的必要，不過還是感謝分享心得。</p>
+</blockquote>
+<p>是的，「使用上的必要」是看身處在整個產業鏈中哪個環節；這類知識在上游比較
+有用，或著在資料數量 ｎ 夠大時才比較有用。</p>
+<blockquote>
+<p>TSW @ptt.cc</p>
+<p>「資料數量 n 夠大時」 應該會有十分完整的 index 跟 compare 機制，感覺更
+用不到的說@@</p>
+</blockquote>
+<p>同意，「ｎ夠大」可以有很多解釋；例如，大到單一機器(的記憶體)「裝不下」，
+也是一種大。大到一般人只能在抽象層面理解的數量級，也是一種大，等等。</p>
+<p>然而，所謂「完整的 index 跟 compare 機制」，中的「 compare 機制」 ，即使
+不是就真的去覆寫(override) GetHashCode()  這個方法(method), 我很難想像一
+個「用不到類似 hashing 相關作法的、為了處理大量資料的 compare 機制」</p>
+<p>當然，是有可能因為 indexing 作得很棒， key  選得很棒，以致於所有需要
+compare 的場合通通不需要更進一步的優化，這個理論上的確是可能的；但在實務
+上，我覺得很難實現，尤其是很難「一次到位」就作好。中間應該會有段過渡期，
+是連系統、流程本身的規格都會繼續演化，ｎ本身的數量級會演化，對於「ｎ有多
+大」的解讀也會演化，值不值得去作 indexing 的評估也會演化；通常是以三年、
+五年、十年為單位在演化。</p>
+<p>是故，實務上很難一次到位，除非作的東西夠小；然後無可避免的，一些 local
+<strong>temporary</strong> optimization 最後就為成為這系統無法動搖的一部分 XD  就如下
+面這句話說的：</p>
+<blockquote>
+<p>Nothing is more permanent than a temporary solution.</p>
+<p>沒有比「暫時性方案」更恆遠的事物了。</p>
+</blockquote>
+<p>易言之，我 100% 同意以下這句話</p>
+<blockquote>
+<p>視情況，可能有比「從 GetHashCode()  著手」更好的解決方案。</p>
+</blockquote>
+<p>但實務上，大概還是取決於天時地利人和 :D</p>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>C# `GetHashCode()`  討論</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-discussion.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-discussion.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>

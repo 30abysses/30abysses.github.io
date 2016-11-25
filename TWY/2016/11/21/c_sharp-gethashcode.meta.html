@@ -4,7 +4,7 @@
 
 
 <head>
-    <title>TWY 2016-11-21 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <title>C# `GetHashCode()`  &#x7CFB;&#x5217;&#x6587;&#x4E4B;&#x7DE3;&#x8D77; @ TWY 2016-11-21 @ 30abysses (&#x5345;&#x6DF5;)</title>
     <meta charset="UTF-8"/>
     <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
     <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@
 
 
 <div class="center-block">
-    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / 21</code></div>
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / <a href="./index.html">21</a> / C# `GetHashCode()`  &#x7CFB;&#x5217;&#x6587;&#x4E4B;&#x7DE3;&#x8D77;</code></div>
     <script src="../../../../.assets/google-custom-search-engine.js"></script>
     <gcse:search></gcse:search>
 </div>
@@ -46,7 +46,24 @@
 
 
 <div class="center-block"><hr/><br/></div>
-<div class="center-block"><ul><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-discussion.html">C# `GetHashCode()`  &#x8A0E;&#x8AD6;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-explained.html">C# `GetHashCode()` &#x7C21;&#x55AE;&#x4F86;&#x8AAA;&#x5C31;&#x662F;&#x2026;&#x2026;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-origin-guidelines-rules.html">C# `GetHashCode()` &#x8D77;&#x6E90;&#x3001;&#x5B88;&#x5247;&#x3001;&#x6CD5;&#x5247;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-source-code.html">C# `GetHashCode()`  &#x539F;&#x59CB;&#x78BC;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-valuetype.html">C# `System.Valuetype.GetHashCode()` &#x6F5B;&#x5728;&#x6548;&#x80FD;&#x3001;&#x5B89;&#x5168;&#x554F;&#x984C;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.html">C# `GetHashCode()`</a><code> </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.html">C# `GetHashCode()`</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.html">C# `GetHashCode()`  &#x7CFB;&#x5217;&#x6587;&#x4E4B;&#x7DE3;&#x8D77;</a></li></ul></div>
+<div class="center-block"><h1>C# <code>GetHashCode()</code>  系列文之緣起</h1>
+<p>之所以會寫這一系列文章，一來是因為很久以前就很好奇
+<code>Object.GetHashCode()</code>  傳回的「魔數(magic number)」究竟從何而來，二來是
+因為前陣子正好與人聊到「（新鮮人求職時）怎麼樣的作品才算上得了檯面？」</p>
+<p>我的主張為：</p>
+<blockquote>
+<p>看起來再簡單的題目，事實上都有深入鑽研的空間。沾醬油式的東拼西湊關鍵字
+是不容易瞞住「過來人」的（大家都當過菜鳥，都知道菜鳥混水摸魚的招式 :D
+）。與其樣樣通樣樣鬆，不如把一個小題目的來龍去脈徹底摸熟，親手打造「學
+習能力與熱情」的鐵證，而不是被動地等別人來賞識自己。</p>
+</blockquote>
+<p>是故，就寫了這一系列文章，前後大約花了 25 小時（研空、摸索 .NET coreclr,
+、寫第一版文章、與網友討論，重構文章架構）；除了滿足對 <code>GetHashCode()</code>
+的好奇心外，一路走來也習得了各種知識。</p>
+<p>在求職面試場合，這種親手習得、吸收、反芻過的知識與技能，就是「嘴炮」的最
+佳彈藥；當對方在談話中作球給你殺時，就要是靠這種火力去 combo OTK  （而不
+是虛有其表的證照、證書、有的沒的五四三的。） :D</p>
+</div>
 <div class="center-block"><br/><hr/></div>
 
 
@@ -74,9 +91,9 @@
     <section>
         <p>
             <small>
-                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>www.30abysses.com</code></span>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>C# `GetHashCode()`  系列文之緣起</code></span>
                 by
-                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/" property="cc:attributionName" rel="cc:attributionURL">30abysses.com</a>
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
                 <br/>
                 is licensed under a
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
