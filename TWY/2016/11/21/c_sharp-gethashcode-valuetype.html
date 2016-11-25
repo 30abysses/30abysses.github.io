@@ -4,7 +4,7 @@
 
 
 <head>
-    <title>TWY 2016-11-21 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <title>C# `System.Valuetype.GetHashCode()` &#x6F5B;&#x5728;&#x6548;&#x80FD;&#x3001;&#x5B89;&#x5168;&#x554F;&#x984C; @ TWY 2016-11-21 @ 30abysses (&#x5345;&#x6DF5;)</title>
     <meta charset="UTF-8"/>
     <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
     <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@
 
 
 <div class="center-block">
-    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / 21</code></div>
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / <a href="./index.html">21</a> / C# `System.Valuetype.GetHashCode()` &#x6F5B;&#x5728;&#x6548;&#x80FD;&#x3001;&#x5B89;&#x5168;&#x554F;&#x984C;</code></div>
     <script src="../../../../.assets/google-custom-search-engine.js"></script>
     <gcse:search></gcse:search>
 </div>
@@ -46,7 +46,25 @@
 
 
 <div class="center-block"><hr/><br/></div>
-<div class="center-block"><ul><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-discussion.html">C# `GetHashCode()`  &#x8A0E;&#x8AD6;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-explained.html">C# `GetHashCode()` &#x7C21;&#x55AE;&#x4F86;&#x8AAA;&#x5C31;&#x662F;&#x2026;&#x2026;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-origin-guidelines-rules.html">C# `GetHashCode()` &#x8D77;&#x6E90;&#x3001;&#x5B88;&#x5247;&#x3001;&#x6CD5;&#x5247;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-source-code.html">C# `GetHashCode()`  &#x539F;&#x59CB;&#x78BC;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-valuetype.html">C# `System.Valuetype.GetHashCode()` &#x6F5B;&#x5728;&#x6548;&#x80FD;&#x3001;&#x5B89;&#x5168;&#x554F;&#x984C;</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.html">C# `GetHashCode()`</a><code> </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.html">C# `GetHashCode()`</a></li><li><code>TWY 2016-11-21 </code><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.html">C# `GetHashCode()`  &#x7CFB;&#x5217;&#x6587;&#x4E4B;&#x7DE3;&#x8D77;</a></li></ul></div>
+<div class="center-block"><h1>C# <code>System.Valuetype.GetHashCode()</code> 潛在效能、安全問題</h1>
+<p><code>ValueType</code>  的 `GetHashCode()  預設實作是把所有欄位(field) 大鍋炒成
+雜湊(hash)值；有看過些說法主張這可能造成潛在的效能問題外，然而，更嚴重的
+是如其<a href="https://github.com/dotnet/coreclr/blob/release/1.1.0/src/vm/comutilnative.cpp#L2770-L2774">原碼註解</a> 所指出的，這多少會在某種程度上把敏感資訊透露出去，也
+就是有 <strong>潛在的安全問題</strong> 。</p>
+<pre><code>// The default implementation of GetHashCode() for all value types.
+// Note that this implementation reveals the value of the fields.
+// So if the value type contains any sensitive information it should
+// implement its own GetHashCode().
+FCIMPL1(INT32, ValueTypeHelper::GetHashCode, Object* objUNSAFE)
+</code></pre>
+<p>是故，原碼註解主張</p>
+<blockquote>
+<p>若此 value type 含有敏感資訊，那它應該為 <code>GetHashCode()</code>  提供自己的實
+作版本。</p>
+</blockquote>
+<p>然而，很遺憾的， <a href="https://msdn.microsoft.com/en-us/library/system.valuetype.gethashcode.aspx"><code>System.Valuetype.GetHashCode()</code> 的官方文件</a>
+目前(2016-11-25)並沒有特別提醒這件事。</p>
+</div>
 <div class="center-block"><br/><hr/></div>
 
 
@@ -74,9 +92,9 @@
     <section>
         <p>
             <small>
-                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>www.30abysses.com</code></span>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>C# `System.Valuetype.GetHashCode()` 潛在效能、安全問題</code></span>
                 by
-                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/" property="cc:attributionName" rel="cc:attributionURL">30abysses.com</a>
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-valuetype.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-valuetype.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
                 <br/>
                 is licensed under a
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>

@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>C# `GetHashCode()` &#x8D77;&#x6E90;&#x3001;&#x5B88;&#x5247;&#x3001;&#x6CD5;&#x5247; @ TWY 2016-11-21 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / <a href="./index.html">21</a> / C# `GetHashCode()` &#x8D77;&#x6E90;&#x3001;&#x5B88;&#x5247;&#x3001;&#x6CD5;&#x5247;</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM.</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1>C# <code>GetHashCode()</code> 起源、守則、法則</h1>
+<p><em>le</em> <strong>Eric Lippert</strong> 在他的文章
+&quot;<a href="https://blogs.msdn.microsoft.com/ericlippert/2011/02/28/guidelines-and-rules-for-gethashcode/">Guidelines and rules for GetHashCode</a>&quot; 中提出了很有趣的問題：</p>
+<blockquote>
+<p>Why do we have this method on Object in the first place?</p>
+<p>究竟為什麼這個方法(<code>GetHashCode()</code>)是宣告在 <code>Object</code> 上？</p>
+</blockquote>
+<p>Eric Lippert  檢視宣告在 <a href="https://msdn.microsoft.com/en-us/library/system.object.aspx"><code>System.Object</code></a> 上的其他方法：</p>
+<blockquote>
+<p>It makes perfect sense that every object in the type system should
+provide a GetType method; data’s ability to describe itself is a key
+feature of the CLR type system. And it makes sense that every object
+should have a ToString, so that it is able to print out a
+representation of itself as a string, for debugging purposes. It seems
+plausible that objects should be able to compare themselves to other
+objects for equality. But why should it be the case that every object
+should be able to hash itself for insertion into a hash table? Seems
+like an odd thing to require every object to be able to do.</p>
+</blockquote>
+<p>摘要釋譯如下：</p>
+<ul>
+<li><code>GetType()</code>:  「資料『自我描述』的能力」是 CLR  類別系統的關鍵特點之一</li>
+<li><code>ToString()</code>: 為了除錯，提供以「字串」印出自己的能力</li>
+<li><code>Equals()</code>: 感覺上物件應要能與其它物件比較「相等性」</li>
+<li><code>GetHashCode()</code>: <strong>但是</strong> ，為什麼強制要求所有的物件都要能計算雜湊值？</li>
+</ul>
+<p>Eric Lippert  的感想：</p>
+<blockquote>
+<p>I think if we were redesigning the type system from scratch today,
+hashing might be done differently, perhaps with an IHashable
+interface. But when the CLR type system was designed there were no
+generic types and therefore a general-purpose hash table needed to be
+able to store any object.</p>
+</blockquote>
+<p>摘要釋譯如下：</p>
+<blockquote>
+<p>我想，如果我們今天從頭重新設計類別系統，大概會用不同方法來實作雜湊；或
+許會用個 <code>IHashable</code>  介面。但是，當初設計 CLR  類別系統時尚無泛型類別
+，是故一個通用的雜湊表需要能儲存任何物件。</p>
+</blockquote>
+<p>我對 Eric Lippert 這兩段文字的解讀是：類似 <a href="https://msdn.microsoft.com/en-us/library/system.icomparable.aspx"><code>System.IComparable</code></a> ，
+<strong>或許</strong> <code>GetHashCode()</code> 應該屬於像這樣的一個介面</p>
+<pre><code>    interface IHashable
+    {
+        int GetHashCode();
+    }
+</code></pre>
+<p><strong>或許</strong>  那樣作會比較乾淨(clean) 與優雅(elegant) 。</p>
+<p>然而，就我自己對 C# / .NET  的感覺是：</p>
+<blockquote>
+<p>我覺得把 <code>GetHashCode()</code>  宣告在 <code>System.Object</code>  上，且提供了一個在通
+常情形下堪用的預設實作，是在理論與實務上取得了 <strong>適當的平衡</strong> 。</p>
+</blockquote>
+<p>所謂「理論與實務上的適當的平衡」的實例之一，就是「讀寫檔案」。</p>
+<p>在我印像中的 Java,  要讀寫檔案就得要把一堆有的沒的五四三 stream, reader,
+writer 組合起來；但在 .NET / C#, 讀寫(小)檔案時， <code>System.IO.File</code>  已經
+把最常見的動作通通包裝好，並且後來更進一步加入類似串流(stream)的支援；但
+若想更精確地控制讀寫檔案的緩衝(buffer)等行為，還是可以回頭去組裝
+stream, reader, writer  以達成目的。易言之，就是在實務上作到</p>
+<ul>
+<li>讓常用的功能「方便(convenient)」。</li>
+<li>讓複雜的動作「可能(possible)」。</li>
+</ul>
+<p>而不是過度偏重理論上的乾淨與優雅、犧牲實用性。是故，我傾向於認為
+<code>GetHashCode()</code> 的設計是可以接受的。</p>
+<hr />
+<h2><code>GetHashCode()</code>  守則(guideline)與法則(rule)</h2>
+<p>基本上，<a href="https://msdn.microsoft.com/en-us/library/system.object.gethashcode.aspx">MSDN <code>GetHashCode()</code>  官方文件</a> 與 <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/02/28/guidelines-and-rules-for-gethashcode/">Eric Lippert 的文章</a>
+已提供了相當的資訊；此處將其內容摘要整理之，附上一些實驗結果，並指出
+MSDN  官方機器翻譯的一個錯誤。</p>
+<h3>實驗環境</h3>
+<ul>
+<li>64-bit W10 Pro 1607</li>
+<li>VS2015 Update 3</li>
+</ul>
+<hr />
+<h2>Ｐ(相同／相等物件) → Ｑ(傳回相同雜湊值)</h2>
+<p>所有的 <code>GetHashCode()</code>  實作都必須遵守這個法則。如果相同／相等物件傳回不
+同雜湊值，那代表著 <code>GetHashCode()</code>  或 <code>Equals()</code> 的實作裡有臭蟲。</p>
+<hr />
+<h2>Ｑ(傳回相同雜湊值) →╳→ Ｐ(相同／相等物件)</h2>
+<p>實驗：</p>
+<pre><code>    Console.WriteLine(1L.GetHashCode());
+    Console.WriteLine(4294967296L.GetHashCode());
+</code></pre>
+<p>很明顯的， <code>1L</code> 與 <code>4294967296L</code>  是不同／相異的物件，但兩者都會傳回相同
+的雜湊值: <code>1</code> 。這就是「即使傳回相同的雜湊值，也不代表是相等／相同的物件
+」的例子。</p>
+<hr />
+<h2>不要將雜湊值儲存於外部媒介以供未來再使用</h2>
+<blockquote>
+<p><code>GetHashCode()</code> 傳回值應只在同 process 下的同一 application domain  內
+使用；不同 .NET Framework 間的 <code>GetHashCode()</code>  實作有可能改變</p>
+</blockquote>
+<p>測試方法：</p>
+<pre><code>    Console.WriteLine(&quot;Hello, world!&quot;.GetHashCode());
+</code></pre>
+<p>測試結果：</p>
+<ul>
+<li>.NET 2.0, 3.0, 3.5, 4.0 傳回 307044849</li>
+<li>.NET 4.5.<em>, 4.6.</em> 傳回 904533705</li>
+<li>.NET Core 1.0.1 傳回 -1650644819</li>
+</ul>
+<p>這就是「同樣的物件，在不同的環境下可能／可以傳回不同的雜湊值」的例子。</p>
+<hr />
+<h2>不要將 <code>GetHashCode()</code>  產生的雜湊值用在密碼學(cryptography)用途上</h2>
+<p>簡單地說，「閃開！讓專業的來！」若要算出有密碼學強度的雜湊值，應該使用以
+下相關工具</p>
+<ul>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.security.cryptography.hashalgorithm.aspx"><code>System.Security.Cryptography.HashAlgorithm</code></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.security.cryptography.keyedhashalgorithm.aspx"><code>System.Security.Cryptography.KeyedHashAlgorithm</code></a></li>
+</ul>
+<hr />
+<h2>（只要物件本身沒改變） <code>GetHashCode()</code>  應該要有一致性</h2>
+<p>只要物件本身沒有足以影響 <code>Equals()</code> 結果的變化，那 <code>GetHashCode()</code>  產生
+的雜湊也就不應變化。（但這只限於同一 process  下同一 application domain
+）。</p>
+<p>尤其是當此物件被存放在雜湊表這類「重度依賴雜湊值以確保其運作正確性」的資
+料結構中時，若 <code>GetHashCode()</code>  無法傳回一致的雜湊值，可以想見這會造成各
+種混亂。</p>
+<hr />
+<h2><code>GetHashCode()</code>  的計算需求要少、要快</h2>
+<p><code>GetHashCode()</code> 本來的目的就是協助、加快比較物件之間的相等性；如果
+<code>GetHashCode()</code> 要花大量時間、資源運算，那反而本末倒置了。</p>
+<hr />
+<h2><code>GetHashCode()</code>  不應丟出例外(exception)</h2>
+<p>官方原文：</p>
+<blockquote>
+<p>The GetHashCode method should not throw exceptions.</p>
+</blockquote>
+<p>目前(2016-11-25)的<a href="https://msdn.microsoft.com/zh-tw/library/system.object.gethashcode.aspx">官方機器翻譯</a>：</p>
+<blockquote>
+<p>GetHashCode 方法應該擲回例外狀況。</p>
+</blockquote>
+<p><code>ლ(ಠ益ಠლ)</code></p>
+<hr />
+<h2><code>GetHashCode()</code>  產生的雜湊值應要平均分佈</h2>
+<p>愈能平均分佈，通常愈能避免碰撞。</p>
+<p>同時，要考量到輸入資料的性質； Eric Lippert 有提到個案例：
+「[美國郵遞區號][16]」，通通都是五個數字字元；而他當時寫的雜湊演算法無法
+有效地就這樣的資料產生平均分佈的雜湊值（也就是產生了大量的碰撞問題），最
+後嚴重拖累系統效能。</p>
+<p>另外一點是安全上的考量；如果雜湊值演算法中有來自使用者的輸入資料，那麼在
+理論上就有可能讓惡意使用者有機可趁，想辦法產生大量的碰撞，拖累你的系統效
+能。</p>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>C# `GetHashCode()` 起源、守則、法則</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-origin-guidelines-rules.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-origin-guidelines-rules.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>
