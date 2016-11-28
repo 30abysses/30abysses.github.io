@@ -1,4 +1,4 @@
-> http://www.30abysses.com/TWY/2016/11/24/dragon-ball-z-abridged-1.md
+﻿> http://www.30abysses.com/TWY/2016/11/24/dragon-ball-z-abridged-1.md
 > by TW Yang <twy@30abysses.com> 2016-11-24 CC-BY-4.0
 
 # Dragon Ball Z Abridged 1  解說
