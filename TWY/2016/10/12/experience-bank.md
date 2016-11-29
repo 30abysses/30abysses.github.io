@@ -1,4 +1,4 @@
-> http://www.30abysses.com/TWY/2016/10/12/experience-bank.md
+﻿> http://www.30abysses.com/TWY/2016/10/12/experience-bank.md
 > by TW Yang <twy@30abysses.com> 2016-10-12 CC-BY-4.0
 
 # 《經驗值銀行》讀後感
