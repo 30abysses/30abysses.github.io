@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>**&#x6DFA;&#x8AC7;**  &#x8CC7;&#x8A0A;&#x5B89;&#x5168; @ TWY 2016-11-28 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2016</a> / <a href="../index.html">11</a> / <a href="./index.html">28</a> / **&#x6DFA;&#x8AC7;**  &#x8CC7;&#x8A0A;&#x5B89;&#x5168;</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM.</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1><strong>淺談</strong>  資訊安全</h1>
+<p>一位網友對《<a href="http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-valuetype.html">C# System.Valuetype.GetHashCode() 潛在效能、安全問題</a>》
+提出了個問題：</p>
+<blockquote>
+<p>james732 @ptt.cc</p>
+<p>不過有可能從標準實作算出的hash去倒推特定的資料嗎？</p>
+</blockquote>
+<p>也許、大概、應該不太可能，然而，資訊安全(<a href="https://en.wikipedia.org/wiki/Information_security">information security</a>) 是個
+很複雜、反直覺的題目，每個系統的威脅模型(<a href="https://en.wikipedia.org/wiki/Threat_model">threat model</a>) 不同，很難從
+單一弱點(<a href="https://en.wikipedia.org/wiki/Vector_(malware)">attack vector</a> 來評估；但是，通常透露給攻擊者的資訊是愈少愈
+好。</p>
+<p>以下將討論一個理論上的例子，與一個實際上的例子。</p>
+<hr />
+<h2>理論上的例子</h2>
+<p>假設我們要設計個內建權限控制的檔案系統：</p>
+<ul>
+<li>使用者可以下指令讀(<code>read</code>)檔案。</li>
+<li>使用者必須要有「讀」的權限才能讀到檔案。</li>
+</ul>
+<p>然後，假設目前只有這樣一個檔案：</p>
+<pre><code>    /foo/bar.txt
+</code></pre>
+<p>假設一個  <strong>沒有</strong> 閱讀權限的使用者下如下的指令時，</p>
+<pre><code>    read /foo/bar/baz.txt
+</code></pre>
+<p>很直覺地，我們會覺得應該傳回類似這樣的錯誤訊息</p>
+<pre><code>    錯誤：找不到 /foo/bar/baz.txt
+</code></pre>
+<p>到目前為止，一切很好，沒有問題。</p>
+<p>然而，如果該  <strong>沒有</strong>  閱讀權限的使用者下如下的第二個指令時，</p>
+<pre><code>    read /foo/bar.txt
+</code></pre>
+<p>我們應該傳回怎樣的錯誤訊息？有以下至少兩種可能性：</p>
+<pre><code>(1)
+    錯誤：你沒有權限讀 /foo/bar.txt
+
+(2)
+    錯誤：找不到 /foo/bar.txt
+</code></pre>
+<p>直覺上，大概會覺得 <code>(1)</code>  是比較好的使用者體驗；Ｂｕｔ！如果這是一個聰明
+的攻擊者，他就能想通</p>
+<blockquote>
+<p>雖然我沒有閱讀權限，但現在我知道了 /foo/bar.txt 的存在。</p>
+</blockquote>
+<p>易言之，雖然他沒有閱讀權限，但他仍可利用 <code>read</code> 這個指令來探測(probe) 整
+個檔案系統。這樣子意外地透露給攻擊者的資訊，視場合不同，造成的風險也不同
+；有可能沒什麼大不了的，也有可能透露出商業機密（例如，有時檔案名產本身就
+是新產品的代號(code name) 。）</p>
+<h3>那如果傳回一樣的錯誤訊息，就安全了嗎？</h3>
+<p>不一定。一個聰明的攻擊者多半可以從別的線索裡找到你想隱藏的資訊；例如說，
+我們修正了上段中描述的問題，現在不管是「此檔案真的不存在」或「使用者沒有
+權限讀此檔案」，該 <code>read</code> 指令都會傳回「找不到 <em>/path/file</em> 」，ｂｕｔ！
+此檔案系統在處理以下兩個程序「花費的時間」不同的話：</p>
+<pre><code>(a)
+    確認檔案；檔案不存在；傳回錯誤。
+
+(b)
+    確認檔案；檔案存在；讀取使用者身份；讀取使用者權限；比對權限；傳回錯誤。
+
+</code></pre>
+<p>那麼，一個聰明的攻擊者仍有可能想通「一樣是『找不到 <em>/path/file</em> 』的錯誤
+，但執行速度仍有（微妙的）差異，可以判斷哪些檔案是『真的不存在』，哪些檔
+案是『存在，但我沒有權限閱讀』。」</p>
+<hr />
+<h2>實際上的例子</h2>
+<p>之前 Bandai Namco 公開 <a href="http://summer-lesson.bn-ent.net/">Summer Lesson</a> 時，有 <em>無聊人士</em> 去簡單地探測
+了一下其官方網站，發現它雖然把目錄列表(directory listing) 功能關掉了，但
+從其首頁上 Hikari 人物圖可以很明顯地看出命名規則：</p>
+<blockquote>
+<p>http://summer-lesson.bn-ent.net/images/chara/hikari/img_hikari.png</p>
+</blockquote>
+<p><img src="http://summer-lesson.bn-ent.net/images/chara/hikari/img_hikari.png" alt="Hikari" /></p>
+<p>該 <em>無聊人士</em> 就寫了個簡單的腳本(script)用「2012  日本最常見 50 個女性名
+字」去踹官方主機，看看能不能碰巧挖出當時未公開的資料。</p>
+<p>例如：</p>
+<ul>
+<li>已知
+<code>GET http://summer-lesson.bn-ent.net/images/chara/hikari/img_hikari.png</code>
+傳回 <code>HTTP 200</code></li>
+<li>已知
+<code>GET http://summer-lesson.bn-ent.net/images/chara/akane/img_akane.png</code>
+傳回 <code>HTTP 404</code></li>
+</ul>
+<p><strong>如果</strong>
+<code>GET http://summer-lesson.bn-ent.net/images/chara/kasumi/img_kasumi.png</code>
+傳回 <code>HTTP 403</code> ，那麼，就算讀不到 <code>img_kasumi.png</code> 的內容，攻擊者也知道
+了 <code>kasumi</code> 的存在。</p>
+<p>雖然最後沒挖出任何東西，但世界上就是有這類 <em>無聊人士</em> 愛玩這種解謎遊戲。</p>
+<h1>結論</h1>
+<p>一個系統到底要防守得多嚴密？這沒有一定的答案，需要從威脅模型分析入手，評
+估整體風險、商業影響、成本，等等因素，才能知道。</p>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>**淺談**  資訊安全</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2016/11/28/information-security.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2016/11/28/information-security.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>
