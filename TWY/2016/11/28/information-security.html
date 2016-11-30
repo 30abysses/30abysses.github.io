@@ -68,14 +68,14 @@
 <p>然後，假設目前只有這樣一個檔案：</p>
 <pre><code>    /foo/bar.txt
 </code></pre>
-<p>假設一個  <strong>沒有</strong> 閱讀權限的使用者下如下的指令時，</p>
+<p>假設一個 <strong>沒有</strong> 閱讀權限的使用者下如下的指令時，</p>
 <pre><code>    read /foo/bar/baz.txt
 </code></pre>
 <p>很直覺地，我們會覺得應該傳回類似這樣的錯誤訊息</p>
 <pre><code>    錯誤：找不到 /foo/bar/baz.txt
 </code></pre>
 <p>到目前為止，一切很好，沒有問題。</p>
-<p>然而，如果該  <strong>沒有</strong>  閱讀權限的使用者下如下的第二個指令時，</p>
+<p>然而，如果該 <strong>沒有</strong> 閱讀權限的使用者下如下的第二個指令時，</p>
 <pre><code>    read /foo/bar.txt
 </code></pre>
 <p>我們應該傳回怎樣的錯誤訊息？有以下至少兩種可能性：</p>

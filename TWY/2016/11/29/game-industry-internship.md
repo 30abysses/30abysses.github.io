@@ -11,17 +11,20 @@
 在北美有相關業界經驗的網友回答；整體來說是偏向軟體科技領域。
 
 
-##  Credits
+## Credits
 
 * 鄉民 ninja5566 @ptt.cc  提問，釣出這串討論。
 * 鄉民 cjcat2266 @ptt.cc
   * Ming-Lun "Allen" Chou
-  * http://allenchou.net/
+  * [allenchou.net][15]
 * 鄉民 fallingleaf @ptt.cc
 * 鄉民 Kpmj @ptt.cc
 * 鄉民 AmosYang @ptt.cc
   * TW Yang
-  * http://www.30abysses.com/
+  * [30abysses.com][16]
+
+[15]: http://allenchou.net/
+[16]: http://www.30abysses.com/
 
 
 
@@ -72,7 +75,7 @@ indie 的話參與度比較高，但相對地風險較高、待遇較差。
 如果是呈交電子版的申請書／履歷表，可以把其中網址、信箱連結作成
 可點擊的(clickable) 。
 
-"[Perfect is the enemy of good.][4]"；就實習職缺來說， Riot 通常十月多就
+["Perfect is the enemy of good."][4]；就實習職缺來說， Riot 通常十月多就
 額滿，易言之，死線(deadline)日期只是截止收件，但有可能早在那之前就額滿，
 能早點申請就早點申請。
 
@@ -143,5 +146,5 @@ indie 的話參與度比較高，但相對地風險較高、待遇較差。
 
 # 結論
 
-因為每個人的情形多少有些出入，業界需求也會演化，是故  **沒有**  一套可以
-按部就步照著作的生產線流水式標準流程，必須靠自己走出自己的路。
+因為每個人的情形多少有些出入，業界需求也會演化，是故 **沒有** 一套可以按
+部就步照著作的生產線流水式標準流程，必須靠自己走出自己的路。
