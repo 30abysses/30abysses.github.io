@@ -20,7 +20,7 @@
 
 * [MSDN `GetHashCode()`  官方文件][1] （[官方機器翻譯版本][5]）
 * [`coreclr` 原始碼(source code)][6]
-* "[Guidelines and rules for GetHashCode][7]" by _le_ **Eric Lippert**
+* ["Guidelines and rules for GetHashCode"][7] by _le_ **Eric Lippert**
 
 [5]: https://msdn.microsoft.com/zh-tw/library/system.object.gethashcode.aspx
 [6]: https://github.com/dotnet/coreclr
