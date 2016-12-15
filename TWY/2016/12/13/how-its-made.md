@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/12/13/how-its-made.md
 > by TW Yang <twy@30abysses.com> 2016-12-13 CC-BY-4.0
 
-# 英語，聽力， How It's Made
+# 英語，聽， How It's Made
 
 [《How It's Made》][1]是一介紹「事物製造過程」的影集；一集通常分成四篇，
 講解四種事物，每篇約五分鐘。
@@ -13,8 +13,8 @@
 
 [1]: https://en.wikipedia.org/wiki/How_It's_Made
 
-在 YouTube  上以 "how it's made"  蒐尋通常可以找到許多影片，但這裡是其正
-式頻道：
+在 YouTube  上以 "how it's made"  蒐尋通常可以找到許多影片；以下是其正式
+頻道：
 
 * YouTube: [https://www.youtube.com/c/HowItsMadeCommunity][2]
 * Facebook: [https://www.facebook.com/howitsmade1][3]
