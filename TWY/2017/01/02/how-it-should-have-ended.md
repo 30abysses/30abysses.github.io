@@ -1,5 +1,5 @@
-﻿> http://www.30abysses.com/TWY/2017/01/01/how-it-should-have-ended.md
-> by TW Yang <twy@30abysses.com> 2017-01-01 CC-BY-4.0
+﻿> http://www.30abysses.com/TWY/2017/01/02/how-it-should-have-ended.md
+> by TW Yang <twy@30abysses.com> 2017-01-02 CC-BY-4.0
 
 # 英語，聽， How It Should Have Ended
 
