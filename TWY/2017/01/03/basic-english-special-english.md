@@ -8,6 +8,7 @@
 * [基本英語][1]([Basic English][2])，[850 個核心詞彙][3]
 * [慢速英語][8]([Special English][9])，[1500 個核心詞彙][10]
 
+
 ## 基本英語(Basic English)
 
 [基本英語][1]([Basic English][2]) 是英語的簡化版本，雖然在實際應用上無法
@@ -19,20 +20,6 @@
 [2]: https://simple.wikipedia.org/wiki/Basic_English
 [3]: https://simple.wikipedia.org/wiki/Basic_English#Related_pages.
 
-[簡單英語維基百科][4]([Simple English Wikipedia][5])是（儘可能地）使用基
-本英語撰寫的維基百科。雖然其資料不如英語維基百科來得完整豐富，但很適合學
-生、英語新手學習英語。（例如，可比較簡單英語維基百科與英語維基百科兩者對
-「簡單英語維基百科」的網頁，會發現簡單英語維基百科使用的英文句子較短、沒
-有使用子句等較複雜的文法結構。）
-
-* 簡單英語維基百科入口： [http://simple.wikipedia.org/][6]
-* 簡單英語維基百科解釋「簡單英語維基百科」的頁面： [https://simple.wikipedia.org/wiki/Simple_English_Wikipedia][5]
-* 英語維基百科解釋「簡單英語維基百科」的頁面： [https://en.wikipedia.org/wiki/Simple_English_Wikipedia][7]
-
-[4]: https://zh.wikipedia.org/zh-tw/%E7%B0%A1%E5%96%AE%E8%8B%B1%E8%AA%9E%E7%B6%AD%E5%9F%BA%E7%99%BE%E7%A7%91
-[5]: https://simple.wikipedia.org/wiki/Simple_English_Wikipedia
-[6]: http://simple.wikipedia.org/
-[7]: https://en.wikipedia.org/wiki/Simple_English_Wikipedia
 
 ##  慢速英語(Special English)
 
@@ -42,3 +29,21 @@
 [8]: https://zh.wikipedia.org/zh-tw/%E6%85%A2%E9%80%9F%E8%8B%B1%E8%AA%9E
 [9]: https://en.wikipedia.org/wiki/Special_English
 [10]: https://simple.wikipedia.org/wiki/Wikipedia:VOA_Special_English_Word_Book
+
+
+##  簡單英語維基百科(Simple English Wikipedia)
+
+[簡單英語維基百科][4]([Simple English Wikipedia][5])是（儘可能地）使用基
+本英語與慢速英語撰寫的維基百科。雖然其資料不如英語維基百科來得完整豐富，
+但很適合學生、英語新手學習英語。（例如，可比較簡單英語維基百科與英語維基
+百科兩者對「簡單英語維基百科」的網頁，會發現簡單英語維基百科使用的英文句
+子較短、沒有使用子句等較複雜的文法結構。）
+
+* 簡單英語維基百科入口： [http://simple.wikipedia.org/][6]
+* 簡單英語維基百科解釋「簡單英語維基百科」的頁面： [https://simple.wikipedia.org/wiki/Simple_English_Wikipedia][5]
+* 英語維基百科解釋「簡單英語維基百科」的頁面： [https://en.wikipedia.org/wiki/Simple_English_Wikipedia][7]
+
+[4]: https://zh.wikipedia.org/zh-tw/%E7%B0%A1%E5%96%AE%E8%8B%B1%E8%AA%9E%E7%B6%AD%E5%9F%BA%E7%99%BE%E7%A7%91
+[5]: https://simple.wikipedia.org/wiki/Simple_English_Wikipedia
+[6]: http://simple.wikipedia.org/
+[7]: https://en.wikipedia.org/wiki/Simple_English_Wikipedia
