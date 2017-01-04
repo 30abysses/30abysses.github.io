@@ -1,7 +1,7 @@
-﻿> http://www.30abysses.com/TWY/2017/01/03/basic-english.md
+﻿> http://www.30abysses.com/TWY/2017/01/03/basic-english-special-english.md
 > by TW Yang <twy@30abysses.com> 2017-01-03 CC-BY-4.0
 
-# 基本英語(Basic English) 、慢速英語(Special English)
+# 英語，讀，基本英語(Basic English) 、慢速英語(Special English)
 
 摘要：有兩種簡化版英文整理好的「核心詞彙」清單，適合新手作為學習指標。
 
