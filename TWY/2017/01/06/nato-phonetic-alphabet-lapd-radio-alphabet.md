@@ -24,7 +24,7 @@
 
 > F as in Foxtrot
 
-來說得更明白。當然，在一般口語中說 "S as in school" 或 "F as in Fish" 也
+來說得更明白。當然，在一般口語中說 "S as in school" 或 "F as in fish" 也
 是可以的，這套國際標準對一般人來說可以只當個參考。詳細的清單可在維基百科
 的頁面上找到：
 
