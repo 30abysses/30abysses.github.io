@@ -19,8 +19,8 @@
 重傷但吃麵包就能治癒」、「女性角色裝備造型」；每集後面多半有一小段幕後製
 作花絮，也很有意思。
 
-目前共三季二十五集，每集約在兩分鐘上下，英式英語；有在玩遊戲的人（尤其是
-ＲＰＧ或ＭＭＯＲＰＧ），可以試試看。
+目前共三季二十五集，每集約在兩分鐘上下，英式英語， YouTube  內建字幕；有
+在玩遊戲的人（尤其是ＲＰＧ或ＭＭＯＲＰＧ），可以試試看。
 
 * 史詩級ＮＰＣ男(Epic NPC Man)，第一季： [https://www.youtube.com/playlist?list=PLSMETuURtTXB83tFc--ZcBnfTgaxF9el3][4]
 * 史詩級ＮＰＣ男(Epic NPC Man)，第二季： [https://www.youtube.com/playlist?list=PLSMETuURtTXCMUK2G3SSsOHJEXHKuPm51][5]
