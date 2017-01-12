@@ -1,4 +1,4 @@
-> http://www.30abysses.com/TWY/2017/01/10/texan-in-tokyo.md
+﻿> http://www.30abysses.com/TWY/2017/01/10/texan-in-tokyo.md
 > by TW Yang <twy@30abysses.com> 2017-01-10 CC-BY-4.0
 
 # 英語、日語，聽，德州人在東京(Texan in Tokyo)
