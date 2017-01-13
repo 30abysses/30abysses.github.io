@@ -3,7 +3,7 @@
 
 # 英語，讀，進階英語常見用字、學習工具
 
-摘要：摘要：這篇文章介紹幾個由「出現頻率」統計出來的英語常見用字清單（進
+摘要：這篇文章介紹幾個由「出現頻率」統計出來的英語常見用字清單（進
 階版本）與資源，
 
 * 新通用常見字(New General Service List)清單： [http://www.newgeneralservicelist.org/s/NGSL-101-by-band-qq9o.xlsx][9]
