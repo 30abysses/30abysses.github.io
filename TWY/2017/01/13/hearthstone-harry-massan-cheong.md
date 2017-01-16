@@ -26,8 +26,9 @@ Harry "MaSsan" Cheong 的頻道： [https://www.youtube.com/channel/UC0f_UlskGvX
 ##  「學英語」
 
 與其他有在直播／釋出影片的爐石玩家相比， MaSsan 的「語氣」偏向於與觀眾互
-動（這應該是因為 MaSsan 習慣一面玩一面回應實況直播聊天頻道裡的觀眾；其他
-人，例如 [Amaz][2]  就偏向於「獨白」講解遊戲戰況、描述自己的心境），是故
-對學習英語對話略有助益。
+動，是故對學習英語對話略有助益。
+
+（這應該是因為 MaSsan 習慣一面玩一面回應實況直播聊天頻道裡的觀眾；其他
+人，例如 [Amaz][2]  就偏向於「獨白」講解遊戲戰況、描述自己的心境。）
 
 [2]: https://www.youtube.com/channel/UC-kezFAw46x-9ctBUqVe86Q
