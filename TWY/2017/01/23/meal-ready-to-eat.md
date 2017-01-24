@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/23/meal-ready-to-eat.md
 > by TW Yang <twy@30abysses.com> 2017-01-23 CC-BY-4.0
 
-# 聽語，聽，ＭＲＥ口糧(Meal, Ready-to-Eat)
+# 英語，聽，ＭＲＥ口糧(Meal, Ready-to-Eat)
 
 [ＭＲＥ口糧][1]([Meal, Ready-to-Eat][2])是美軍的野戰口糧，其特色是輕巧、
 耐運輸（可以空投）、耐儲藏（在常溫下可保存九個月至三年半），且
@@ -42,7 +42,7 @@ YouTuber [Alduin Hearth][3] 製作了[一系列「ＭＲＥ口糧開箱影片」
 * "Meals, Rarely Edible": 很難吃下去的餐點
 * "Meals Rejected by Ethiopians": 連衣索比亞人（暗指饑荒難民）都不吃的
   餐點
-* ""Three Lies for the Price of One": it's not a Meal, it's not Ready,
+* "Three Lies for the Price of One": it's not a Meal, it's not Ready,
   and you can't Eat it.": 三個牛皮，吹好吹滿；說是「速成可食餐點」，但它
   既不是餐點、也不是速成、更不是可食
 * "Meals Requiring Enemas": 需要灌腸的餐點（因為ＭＲＥ裡食物纖維很少，所
