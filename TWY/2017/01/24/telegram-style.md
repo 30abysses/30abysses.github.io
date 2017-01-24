@@ -1,11 +1,12 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/24/telegram-style.md
 > by TW Yang <twy@30abysses.com> 2017-01-24 CC-BY-4.0
 
-# 英語，寫，電報寫作風格(telegram style)
+# 英語，寫，電報寫作風格(telegram style)，美式履歷表
 
 因為在電報時代發電報是以字計價，所以就沿生出
-「電報寫作風格([telegram style])」；該寫作風格以保持原文文意（不造成誤會
-）為前提，儘可能地減少字數，就算最後寫出來的句子不完全符合文法也無所謂。
+「電報寫作風格([telegram style][1])」 ；該寫作風格以保持原文文意（不造成
+誤會）為前提，儘可能地減少字數，就算最後寫出來的句子不完全符合文法也
+無所謂。
 
 例如，[萊特兄弟在 1903-12-17 試飛成功後發的電報][3] ：
 
@@ -14,7 +15,7 @@
 > thirty one miles longest 57 seconds inform Press home Christmas .
 > Orevelle Wright
 
-雖然文法上不正確，但仍傳達了訊息。
+雖然文法上不正確，但仍有效傳達了訊息。
 
 這種寫作風格在今日的新聞標題這類空間有限的地方仍十分常見，也稱作
 標題文體([headlinese][2]) 。
@@ -59,7 +60,7 @@
 
 [4]: https://en.wikipedia.org/wiki/Ellipsis_(linguistics)
 
-以下幾個網頁有對省略體更詳盡的說明：
+以下幾個網頁有對省略語法更詳盡的說明：
 
 * Ellipsis (linguistics): [https://en.wikipedia.org/wiki/Ellipsis_(linguistics)][4]
 * Headlinese: [https://en.wikipedia.org/wiki/Headlinese][2]
@@ -84,7 +85,7 @@
 就是省去了後半句話中的 ends ，也就是 [verb phrase ellipsis][7]  的應用；
 若還原成完整的句子，就會是：
 
-> Friendship often ends in love; but love in friendship never ends.
+> Friendship often ends in love; but love never ends in friendship.
 
 [7]: https://en.wikipedia.org/wiki/Verb_phrase_ellipsis
 
@@ -97,3 +98,46 @@
 應用大概就是寫美式履歷表。我認為，對省略語法的概念先有基本的認識即可，
 至少在遇到省略語法的文體時有個概念，待語感養成之後，再多讀多吸收這類進階
 文法的應用範例。
+
+
+
+# 更正啟事
+
+之前將 Charles Caleb Colton 的
+
+> Friendship often ends in love; but love in friendship -- never.
+
+錯誤地還原成
+
+> Friendship often ends in love; but love in friendship never ends.
+>
+> 友誼常常最後變成愛情；但友情中的愛從不停息。
+
+正確的還原應該是：
+
+> Friendship often ends in love; but love never ends in friendship.
+>
+> 友誼常常最後變成愛情；但愛情最後不會變回友情。
+
+##  考證經過
+
+經 [boblu @ ptt.cc 提出疑問][8] ，再查證[原文][9] 後，發現原文與
+wikiquote.org 的版本有微妙的出入：
+
+[8]: https://www.ptt.cc/bbs/Oversea_Job/M.1485260723.A.672.html
+[9]: https://archive.org/details/laconormanythin11coltgoog
+
+[wikiquote.org 的版本][6] ：
+
+> Friendship often ends in love; but love in friendship -- never.
+
+[原文][9] ：
+
+> Friendship often ends in love; but love, in friendship -- never.
+
+也就是在後半句， love 與 in friendship  之間，原文裡有個逗號；是故，正確
+的還原方式應該是
+
+> Friendship often ends in love; but love never ends in friendship.
+
+在此再次感謝 boblu @ ptt.cc 的指教。
