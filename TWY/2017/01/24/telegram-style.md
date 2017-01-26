@@ -18,7 +18,7 @@
 雖然文法上不正確，但仍有效傳達了訊息。
 
 這種寫作風格在今日的新聞標題這類空間有限的地方仍十分常見，也稱作
-標題文體([headlinese][2]) 。
+標題文體([headlinese][2]) ；也可應用在簡報、投影片的製作上。
 
 [1]: https://en.wikipedia.org/wiki/Telegram_style
 [2]: https://en.wikipedia.org/wiki/Headlinese
@@ -102,7 +102,7 @@
 
 
 ---
-# 更正啟事
+# 2017-01-25  更正啟事
 
 之前將 Charles Caleb Colton 的
 
