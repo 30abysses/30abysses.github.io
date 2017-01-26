@@ -44,8 +44,14 @@ problem, question 在中文裡也都翻作「問題」，但前者偏向於強�
 笑話），有些誤會則會讓人質疑你的專業能力、傷害人際關係，例如，誤用
 childish, childlike ；或誤用 problem, question:
 
-* What is your question?  （你有什麼疑問嗎？）
-* What is your problem? （你腦子有病嗎？）
+* What is your question?  →  你有問題（疑問）嗎？
+* What is your problem? →  你（腦子）有問題嗎？
+
+另一個例子是 terrific, terrible;  這兩個字的拼法很接近，都是從拉丁文的
+terrere 演化而來，但在今日，這兩個字的意義大不相同：
+
+* terrific  是指了不起、非常好（但在古語中是指「造成恐懼的」）
+* terrible  是指可怕的、壞透了
 
 尤其是在正式文件寫作（求職信、入學申請、履歷表，等等）時，影響更大。
 
@@ -60,3 +66,19 @@ childish, childlike ；或誤用 problem, question:
 目前唯一的解法，大概就是先養成對「內涵意義(connotation)、
 字面意義(denotation)」的知覺(awareness) ，在培養語感、吸收資訊時留心確認
 各種字詞的使用時機，並多練習使用。
+
+
+
+---
+# 2017-01-26  更新
+
+在網路上找到了由 Jeffrey Breen  為了分析推特(Twitter) 文字所整理的正面、
+負面用字清單：
+
+* 正面用字： [https://github.com/jeffreybreen/twitter-sentiment-analysis-tutorial-201107/blob/master/data/opinion-lexicon-English/positive-words.txt][3]
+* 負面用字： [https://github.com/jeffreybreen/twitter-sentiment-analysis-tutorial-201107/blob/master/data/opinion-lexicon-English/negative-words.txt][4]
+
+[3]: https://github.com/jeffreybreen/twitter-sentiment-analysis-tutorial-201107/blob/master/data/opinion-lexicon-English/positive-words.txt
+[4]: https://github.com/jeffreybreen/twitter-sentiment-analysis-tutorial-201107/blob/master/data/opinion-lexicon-English/negative-words.txt
+
+這兩個清單加起來共約 6800 字，可作為參考。
