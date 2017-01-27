@@ -51,11 +51,16 @@
 
 > Created Bash scripts and custom Eclipse plugins in Java for automatic
 > code generation
+>
+> 建立 Bash 腳本、以 Java 客製化 Eclipse  插件來自動產生源碼。
 
 這給出了實例與細節，但後繼無力；是故，稍作修改訂正，變成：
 
 > Automated _X%_ _component_ code generation with Bash scripts and
 > custom Eclipse plugins (Java).
+>
+> 以 Bash 腳本、 Java 客製 Eclipse  插件，將 _某元件_ _X%_  的源碼產生
+> 自動化。
 
 這就是由「成果」起手（ "X%" ）、說明實例（ "automated code generation"
 ），點出價值（由自動化節省人工，而人工就是成本），最後補充細節（
@@ -79,20 +84,31 @@
 
 > Implemented automation E2E tests with xUnit and Moq from scratch;
 > integrated with CI to send test report.
+>
+> 從頭以 xUnit  及 Moq  實作自動 E2E  測試，並與 CI 整合、送出測試報告。
 
 與該履歷表作者溝通之後，了解到該團隊之前完全沒有自動測試，是故這東西作
 出來後，是從頂頭上司到 CTO  都點讚的大功，是故，重點在那句
 "from scratch"  ；訂正之後拆成三句：
 
-* Reduced average testing efforts per build from _X_ man minutes to _Y_
-  machine minutes.
-* 100% automated CI E2E tests plus test result reporting, analysis,
-  visualization.
-* Designed and implemented full CI E2E test suite from scratch with
-  xUnit and Moq.
+> Reduced average testing efforts per build from _X_ man minutes to _Y_
+> machine minutes.
+>
+> 100% automated CI E2E tests plus test result reporting, analysis,
+> visualization.
+>
+> Designed and implemented full CI E2E test suite from scratch with
+> xUnit and Moq.
+>
+> 將平均測試成本從 _X_  分鐘（手動）降至 _Y_  （自動）。
+>
+> 100%  完全自動化 CI E2E 測試，且自動化匯報測試結果、分析、並以視覺化
+> 圖表呈現。
+>
+> 從零開始設計整個 CI EIE 測試庫；以 xUnit, Moq 實作。
 
-可惜該履歷表作者手上沒有 code coverage, branch coverage 等資料，不然這一
-段的打擊火力可以更強大。
+同樣一件事，換個說法就鏗鏘有力擲地有聲；可惜該履歷表作者手上沒有
+code coverage, branch coverage  等資料，不然這一段的打擊火力可以更強大。
 
 
 
@@ -124,6 +140,7 @@
 如果是沒有特定目的而寫的履歷表（例如，就放一份在自己網站上，給獵頭人參考
 用的），那稍微偏向流水帳的語氣是無妨（工作經歷、學歷、證照、技能）。如果
 是為了特定職位而寫的，就要以 sales pitch  的心態去寫，也就是這整篇文章
-一直強調的「成果、價值」，而不是糾結於「實例、細節」，那就像是把 iPhone
-如廢五金秤斤論兩賣，本末倒置。
+一直強調的「成果、價值」。
 
+「實例、細節」與左手一樣，只是輔助；如果一味糾結於「實例、細節」而忘了
+「成果、價值」，那就像是把 iPhone 如廢五金秤斤論兩賣，本末倒置。
