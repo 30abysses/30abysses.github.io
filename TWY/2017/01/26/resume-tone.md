@@ -59,7 +59,7 @@
 > Automated _X%_ _component_ code generation with Bash scripts and
 > custom Eclipse plugins (Java).
 >
-> 以 Bash 腳本、 Java 客製 Eclipse  插件，將 _某元件_ _X%_  的源碼產生
+> 以 Bash 腳本、 Java 客製 Eclipse  插件，將 _某元件_ _X%_  的源碼生成
 > 自動化。
 
 這就是由「成果」起手（ "X%" ）、說明實例（ "automated code generation"
@@ -100,7 +100,7 @@
 > Designed and implemented full CI E2E test suite from scratch with
 > xUnit and Moq.
 >
-> 將平均測試成本從 _X_  分鐘（手動）降至 _Y_  （自動）。
+> 將平均測試成本從 _X_  分鐘（手動）降至 _Y_  分鐘（自動）。
 >
 > 100%  完全自動化 CI E2E 測試，且自動化匯報測試結果、分析、並以視覺化
 > 圖表呈現。
