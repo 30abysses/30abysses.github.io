@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/06/nato-phonetic-alphabet-lapd-radio-alphabet.md
 > by TW Yang <twy@30abysses.com> 2017-01-06 CC-BY-4.0
 
-# 英文，說，北約音標字母(NATO phonetic alphabet), LAPD radio alphabet
+# 英語，說，北約音標字母(NATO phonetic alphabet), LAPD radio alphabet
 
 摘要：這篇介紹兩套語音通訊音標字母標準系統，
 
