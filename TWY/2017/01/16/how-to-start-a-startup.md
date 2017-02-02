@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/16/how-to-start-a-startup.md
 > by TW Yang <twy@30abysses.com> 2017-01-16 CC-BY-4.0
 
-# 英語，聽、讀，如何「新創」(How to Start a Startup)
+# 職涯、英語，聽、讀，如何「新創」(How to Start a Startup)
 
 在西元 2014 年，史丹佛大學開了一節課， [CS183B][1]  ，為期十週，主講
 「如何建立新創公司」，講師由「真正創業過的人」擔任，例如：
