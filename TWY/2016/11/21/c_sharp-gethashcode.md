@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.md
 > by TW Yang <twy@30abysses.com> 2016-11-21 CC-BY-4.0
 
-# C# `GetHashCode()`
+# ＣＳ： C# `GetHashCode()`
 
 [`GetHashCode()`][1]  這個方法(method)有著《魔偶馬戲團》中
 「[四大元老][2]」 （[最古の四人][3]） 的地位，直屬 [`System.Object`][4]

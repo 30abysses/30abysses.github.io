@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/10/12/experience-bank.md
 > by TW Yang <twy@30abysses.com> 2016-10-12 CC-BY-4.0
 
-# 《經驗值銀行》讀後感
+# 雞湯：《經驗值銀行》讀後感
 
 《[經驗值銀行][1]》 這篇文章主張：
 

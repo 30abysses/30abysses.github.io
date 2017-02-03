@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/25/connotation-vs-denotation.md
 > by TW Yang <twy@30abysses.com> 2017-01-25 CC-BY-4.0
 
-# 英語，說、寫，內涵意義(connotation)與字面意義(denotation)
+# 英語，說、寫：內涵意義(connotation)與字面意義(denotation)
 
 以中文為例，「謹慎」與「膽怯」都能用來描述一個「遲疑不決」的人，但以中文
 為母語的人可以很清楚的分辨出這兩個形容詞的意念完全不同。

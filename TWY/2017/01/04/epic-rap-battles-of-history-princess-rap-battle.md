@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/04/epic-rap-battles-of-history-princess-rap-battle.md
 > by TW Yang <twy@30abysses.com> 2017-01-04 CC-BY-4.0
 
-# 英語，聽， Battle Rap
+# 英語，聽： Battle Rap
 
 若照著字面上的意思直譯， battle rap 就是「戰鬥饒舌」，就是用押韻的歌詞嘴
 炮、嗆、酸、嘲諷你的對手；或可借用「諸葛亮舌戰群儒」之「舌戰」一詞，稱之

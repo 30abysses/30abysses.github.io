@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/17/xkcd.md
 > by TW Yang <twy@30abysses.com> 2017-01-17 CC-BY-4.0
 
-# 英語，讀， XKCD
+# 英語，讀： XKCD
 
 摘要：這篇文介紹一長期連載的短篇英語漫畫， XKCD （每週一、三、五更新）
 

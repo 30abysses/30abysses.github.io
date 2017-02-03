@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/12/14/primitive-technology.md
 > by TW Yang <twy@30abysses.com> 2016-12-14 CC-BY-4.0
 
-# 英語，讀， Primitive Technology
+# 英語，讀： Primitive Technology
 
 [《Primitive Technology》][1] 是一 YouTube  影集，全程無語音（但偶有字幕
 說明），就是主角一人，從石器開始，從自然中取材，搭草屋，製窯，燒炭，燒陶

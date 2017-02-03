@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/18/schmoyoho.md
 > by TW Yang <twy@30abysses.com> 2017-01-18 CC-BY-4.0
 
-# 英語，聽， schmoyoho
+# 英語，聽： schmoyoho
 
 摘要：這篇文章介紹一 YouTube  頻道， schmoyoho ，常以 [Auto-Tune][1]
 *魔改*  美國政治新聞／歷史影片，讓政治人物唱歌跳舞。其精髓之處，就是製作

@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/24/telegram-style.md
 > by TW Yang <twy@30abysses.com> 2017-01-24 CC-BY-4.0
 
-# 職涯、英語，寫，電報寫作風格(telegram style)，美式履歷表
+# 職涯、英語，寫：電報寫作風格(telegram style)，美式履歷表
 
 因為在電報時代發電報是以字計價，所以就沿生出
 「電報寫作風格([telegram style][1])」 ；該寫作風格以保持原文文意（不造成

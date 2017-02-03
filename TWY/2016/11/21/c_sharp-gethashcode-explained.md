@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-explained.md
 > by TW Yang <twy@30abysses.com> 2016-11-21 CC-BY-4.0
 
-# C# `GetHashCode()` 簡單來說就是……
+# ＣＳ： C# `GetHashCode()` 簡單來說就是……
 
 在試著理解 `GetHashCode()`  的功能前，得先理解它要解決的問題：
 

@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/19/manythings-minimal-pair.md
 > by TW Yang <twy@30abysses.com> 2017-01-19 CC-BY-4.0
 
-# 英語，說、聽，最小對立體(minimal pair)
+# 英語，說、聽：最小對立體(minimal pair)
 
 摘要：找到了兩個英語學習資源的網站；這兩個網站上的資源很多，這篇主要介紹
 它們對最小對立體(minimal pair)的學習資源。

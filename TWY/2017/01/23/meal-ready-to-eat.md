@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/23/meal-ready-to-eat.md
 > by TW Yang <twy@30abysses.com> 2017-01-23 CC-BY-4.0
 
-# 英語，聽，ＭＲＥ口糧(Meal, Ready-to-Eat)
+# 英語，聽：ＭＲＥ口糧(Meal, Ready-to-Eat)
 
 [ＭＲＥ口糧][1]([Meal, Ready-to-Eat][2])是美軍的野戰口糧，其特色是輕巧、
 耐運輸（可以空投）、耐儲藏（在常溫下可保存九個月至三年半），且

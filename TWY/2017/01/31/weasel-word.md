@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/31/weasel-word.md
 > by TW Yang <twy@30abysses.com> 2017-01-31 CC-BY-4.0
 
-# 英語，讀、寫，話術(weasel word)
+# 英語，讀、寫：話術(weasel word)
 
 "weasel"  的直譯是「黃鼠狼」，而 "[weasel word][1]" 代表「乍聽之下很有
 道理，但事實上模擬兩可、含糊不清的話語」，在此譯為「話術」。這篇文章介紹

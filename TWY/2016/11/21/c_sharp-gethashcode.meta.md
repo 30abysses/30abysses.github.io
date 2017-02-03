@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode.meta.md
 > by TW Yang <twy@30abysses.com> 2016-11-21 CC-BY-4.0
 
-# C# `GetHashCode()`  系列文之緣起
+# META, 職涯： C# `GetHashCode()` 系列文之緣起
 
 之所以會寫這一系列文章，一來是因為很久以前就很好奇
 `Object.GetHashCode()`  傳回的「魔數(magic number)」究竟從何而來，二來是
