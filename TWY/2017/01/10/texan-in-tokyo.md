@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/10/texan-in-tokyo.md
 > by TW Yang <twy@30abysses.com> 2017-01-10 CC-BY-4.0
 
-# 英語、日語，聽，德州人在東京(Texan in Tokyo)
+# 英語、日語，聽：德州人在東京(Texan in Tokyo)
 
 [德州人在東京(Texan in Tokyo)][1] 是一對日美夫婦的生活 YouTube  頻道，
 談論美日文化的差異，與「[外人][2]([Gaijin][3])」在日本的生活體驗。

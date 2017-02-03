@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/27/super-power-beat-down.md
 > by TW Yang <twy@30abysses.com> 2017-01-27 CC-BY-4.0
 
-# 英語，聽，超級力量生死鬥(SUPER POWER BEAT DOWN)
+# 英語，聽：超級力量生死鬥(SUPER POWER BEAT DOWN)
 
 [SUPER POWER BEAT DOWN][1]  ，可譯作「超級力量生死鬥」，是由
 [batinthesun][2]  團隊製作的一系列「如果Ｘ與Ｙ打起來，誰會贏？」影片

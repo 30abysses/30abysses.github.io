@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-valuetype.md
 > by TW Yang <twy@30abysses.com> 2016-11-21 CC-BY-4.0
 
-# C# `System.Valuetype.GetHashCode()` 潛在效能、安全問題
+# ＣＳ： C# `System.Valuetype.GetHashCode()`  潛在效能、安全問題
 
 `ValueType`  的 `GetHashCode()  預設實作是把所有欄位(field) 大鍋炒成
 雜湊(hash)值；有看過些說法主張這可能造成潛在的效能問題外，然而，更嚴重的

@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/02/how-it-should-have-ended.md
 > by TW Yang <twy@30abysses.com> 2017-01-02 CC-BY-4.0
 
-# 英語，聽， How It Should Have Ended
+# 英語，聽： How It Should Have Ended
 
 [《How It Should Have Ended》][1] 是一個搞笑吐槽電影劇情的 YouTube  頻道
 ，簡稱 HISHE  ；該頻道名稱就是英語文法裡的「假設語氣」的應用，意指與正式

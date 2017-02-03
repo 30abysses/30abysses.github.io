@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/13/hearthstone-harry-massan-cheong.md
 > by TW Yang <twy@30abysses.com> 2017-01-13 CC-BY-4.0
 
-# 英語，聽，爐石戰記玩家， Harry "MaSsan" Cheong
+# 英語，聽：爐石戰記玩家， Harry "MaSsan" Cheong
 
 網路上有許多爐石戰記玩家直播遊戲實況，有些玩家會把實況編輯後在 YouTube
 上釋出。在 **個人主觀** 綜合考量學英語、遊戲實力、影片質量之後，我推薦

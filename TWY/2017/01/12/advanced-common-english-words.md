@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/12/advanced-common-english-words.md
 > by TW Yang <twy@30abysses.com> 2017-01-12 CC-BY-4.0
 
-# 英語，讀，進階英語常見用字、學習工具
+# 英語，讀：進階英語常見用字、學習工具
 
 摘要：這篇文章介紹幾個由「出現頻率」統計出來的英語常見用字清單（進
 階版本）與資源，

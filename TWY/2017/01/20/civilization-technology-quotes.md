@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/20/civilization-technology-quotes.md
 > by TW Yang <twy@30abysses.com> 2017-01-20 CC-BY-4.0
 
-# 英語，聽、讀，文明帝國(Civilization)
+# 英語，聽、讀：文明帝國(Civilization)
 
 [文明帝國][1]([Civilization][2])是一回合制策略遊戲，自西元 1991 年至今
 2017  年已有六代（以及每代的資料片）。

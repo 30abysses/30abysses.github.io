@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/05/plain-english.md
 > by TW Yang <twy@30abysses.com> 2017-01-05 CC-BY-4.0
 
-# 英語，讀，簡單英語(Plain English)
+# 英語，讀：簡單英語(Plain English)
 
 [Plain English][1]  ，照字面上的意思可譯為「簡單英語」，其特徵是簡單易懂
 ，避免使用太複雜的詞彙；在維基百科上可以找到英語演化／簡化的相關歷史，但

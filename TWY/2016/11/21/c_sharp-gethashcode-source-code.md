@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-source-code.md
 > by TW Yang <twy@30abysses.com> 2016-11-21 CC-BY-4.0
 
-# C# `GetHashCode()`  原始碼
+# ＣＳ： C# `GetHashCode()` 原始碼
 
 這裡自 .NET Core 1.1.0  摘錄一些 `GetHashCode()`  實作作為參考。
 

@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/01/09/epic-npc-man.md
 > by TW Yang <twy@30abysses.com> 2017-01-09 CC-BY-4.0
 
-# 英語，聽，史詩級ＮＰＣ男(Epic NPC Man)
+# 英語，聽：史詩級ＮＰＣ男(Epic NPC Man)
 
 在遊戲裡有所謂的「[非玩家角色][1]([NPC][2])」 ，可泛指「為了故事劇情演出
 或遊戲規則進行所設立的陪襯人物」。

@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/12/16/gone-to-the-snow-dogs.md
 > by TW Yang <twy@30abysses.com> 2016-12-16 CC-BY-4.0
 
-# 英語，聽， Gone to the Snow Dogs
+# 英語，聽： Gone to the Snow Dogs
 
 [《Gone to the Snow Dogs》][1]  是一家庭自製的 YouTube  系列影片，主題是
 一對住在 Michigan 州的夫婦(Jessica & Jamie) 與他們養的數隻月月／哈士奇的

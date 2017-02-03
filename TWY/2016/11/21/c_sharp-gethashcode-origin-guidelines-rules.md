@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2016/11/21/c_sharp-gethashcode-origin-guidelines-rules.md
 > by TW Yang <twy@30abysses.com> 2016-11-21 CC-BY-4.0
 
-# C# `GetHashCode()` 起源、守則、法則
+# ＣＳ： C# `GetHashCode()` 起源、守則、法則
 
 _le_ **Eric Lippert** 在他的文章
 "[Guidelines and rules for GetHashCode][1]" 中提出了很有趣的問題：
