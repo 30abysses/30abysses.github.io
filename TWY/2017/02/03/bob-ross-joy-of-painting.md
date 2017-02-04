@@ -4,8 +4,10 @@
 # 英語，聽， Bob Ross, Joy of Painting
 
 這篇文章介紹 [Robert Norman "Bob" Ross][1]  的 YouTube  頻道
-[Joy of Painting][2]  ；美式英語，語速平緩，用字簡單，對油畫有興趣，或想
-放鬆心情的人，可以試試這個頻道。
+[The Joy of Painting][2]  ；美式英語，語速平緩，用字簡單，對油畫有興趣，
+或想放鬆心情的人，可以試試這個頻道。
+
+* The Joy of Painting: [https://www.youtube.com/channel/UCxcnsr1R5Ge_fbTu5ajt8DQ][2]
 
 [1]: https://en.wikipedia.org/wiki/Bob_Ross
 [2]: https://www.youtube.com/channel/UCxcnsr1R5Ge_fbTu5ajt8DQ
@@ -15,7 +17,8 @@
 # Bob Ross, Joy of Painting
 
 [據維基百科記載][1] ， Bob Ross 於西元 1942 年出生， 1995 年因病過世；而
-[The Joy of Painting] 共 31 季、 403  集，於西元 1983 年至 1994 年播出。
+[The Joy of Painting][3]  共 31 季、 403  集，於西元 1983 年至 1994 年播
+出。
 
 [3]: https://en.wikipedia.org/wiki/The_Joy_of_Painting
 
