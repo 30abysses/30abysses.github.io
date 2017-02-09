@@ -26,8 +26,8 @@
 
 # 買方的立場
 
-首先，引用 [Kevin Spacey][1] 在 [MasterClass][2]  裡，就「演員試鏡、爭取
-演出角色」這件事指點學員的一段話：
+引用 [Kevin Spacey][1] 在 [MasterClass][2]  裡，就「演員試鏡、爭取演出角
+色」這件事指點學員的一段話：
 
 > First of all, they are on your side -- on the other side of the table.
 > No matter how, you know, cold, or even to some degree rude they might
@@ -57,7 +57,7 @@
 人事費用就是（平均）一年十萬美金，這還不算福利、訓練、設備，以及其他風險
 成本。且，如果雇用了錯的人，浪費公司時間金錢資源、增加風險，自然是得要「
 事後檢討」。而且，職缺數與求職人數通常會相差到兩個數量級，是故，「面試官
-」的心理壓力（要從一百人中精挑細選出一人），不見得比「求職者」的壓力來得
+」的心理壓力（要從百人之中精挑細選出一人），不見得比「求職者」的壓力來得
 輕。
 
 
