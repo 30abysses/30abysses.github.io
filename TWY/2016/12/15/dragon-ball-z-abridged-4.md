@@ -25,7 +25,7 @@ God ，拼成 GAHHH  表示拉長的「啊(ah)」的音。
 ---
 ## terrible German accent
 
-這一段故意模仿德語口音說英文，例如 sweat  唸成 sveat  ， water  唸成
+這一段故意模仿德語口音說英語，例如 sweat  唸成 sveat  ， water  唸成
 vater ， squat  唸成 sqvut  。
 
 
