@@ -1,7 +1,7 @@
 ﻿> http://www.30abysses.com/TWY/2017/02/09/paul-graham.md
 > by TW Yang <twy@30abysses.com> 2017-02-09 CC-BY-4.0
 
-# 職涯、英語，讀：保羅．格雷厄姆(Paul Graham) 的文章
+# 職涯、英語，讀：保羅．格雷厄姆(Paul Graham)
 
 對網民大眾來說，[保羅．格雷厄姆][1]([Paul Graham][2]) 最為人知的，就是他
 於《[How to Disagree][3]》中提出的
