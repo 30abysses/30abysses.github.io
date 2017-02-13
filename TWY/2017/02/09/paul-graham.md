@@ -106,3 +106,15 @@ Facebook  同年紀的小孩差不多要上國中。而所謂《[亞洲．矽谷
 
 [24]: http://www.30abysses.com/TWY/2017/01/16/how-to-start-a-startup.html
 [25]: http://www.30abysses.com/TWY/2017/02/01/indie-hackers.html
+
+
+##  2017-02-12  補述
+
+fundersandfounders.com  這個網站專門製作與「新創」這個題目有關的
+[資訊圖表][28]([infographics][27])；有數篇 Paul Graham  的文章也被圖形化
+後收錄於此： [http://fundersandfounders.com/tag/paul-graham/][26] ，喜好
+用圖像思考的人可以試試。
+
+[26]: http://fundersandfounders.com/tag/paul-graham/
+[27]: https://en.wikipedia.org/wiki/Infographic
+[28]: https://zh.wikipedia.org/zh-tw/%E4%BF%A1%E6%81%AF%E5%9B%BE%E5%BD%A2
