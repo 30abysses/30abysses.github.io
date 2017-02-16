@@ -30,7 +30,8 @@
 
 維基百科對 "[Standard English (SE)][4]" 的解釋為：
 
-> Standard English (SE) is any form of the English language that is accepted as a national norm in a particular English-speaking country.
+> Standard English (SE) is any form of the English language that is
+> accepted as a national norm in a particular English-speaking country.
 
 意指「被講英語的國家所接受／認可的英語」；而維基百科列出了以下數種
 「標準英語」：
