@@ -53,8 +53,7 @@
 
 * [Stop Eating it Wrong][14]: 來自不同文化的各種食物吃法
 * [Stop Saying It Wrong][11]: 來自不同文化的各種菜餚名稱的發音
-* [Stop Doing It Wrong: An Ordering and Pronunciation Guide][10]: 點餐、
-  發音指引
+* [Stop Doing It Wrong][10]:  點餐、發音指引
 * [Dining Etiquette][12]: 用餐禮儀
 
 [10]: https://www.youtube.com/playlist?list=PLgBESEI2LUFv6Yvdfcv2RBbdiO4l1z5Jx
@@ -62,5 +61,5 @@
 [12]: https://www.youtube.com/playlist?list=PLgBESEI2LUFv7jTw4eIzQNE1uQyn__LvC
 [14]: https://www.youtube.com/playlist?list=PLgBESEI2LUFusyQSe1EzJkV2511fwXa7D
 
-美式英語、語速中等、影片長度不一，視主題而定，從兩分鐘到十來分鐘都有。若
-對「食」有興趣的話，可以試試。
+美式英語、語速中等、 YouTube  內建字幕、影片長度不一，視主題而定，從兩分
+鐘到十來分鐘都有。若對「食」有興趣的話，可以試試。
