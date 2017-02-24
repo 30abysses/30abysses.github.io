@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>&#xFF23;&#xFF33;&#xFF1A; Ubuntu Desktop 16.10 on Windows 10 Hyper-V @ TWY 2017-02-24 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2017</a> / <a href="../index.html">02</a> / <a href="./index.html">24</a> / &#xFF23;&#xFF33;&#xFF1A; Ubuntu Desktop 16.10 on Windows 10 Hyper-V</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1>ＣＳ： Ubuntu Desktop 16.10 on Windows 10 Hyper-V</h1>
+<p>這篇是在 Windows 10 上用 Hyper-V  跑 Ubuntu Desktop 16.10 的筆記。</p>
+<h2>為什麼選 Ubuntu Desktop  ？</h2>
+<p>因為不想動腦。</p>
+<h1>Ubuntu Desktop 官方下載網頁</h1>
+<ul>
+<li><a href="https://www.ubuntu.com/download/desktop">https://www.ubuntu.com/download/desktop</a></li>
+</ul>
+<p>我選擇目前(2017-02-24)最新版， Ubuntu 16.10 ；下載的 .iso 大約 1.5 GB 。</p>
+<h2>Hyper-V  對 Ubuntu 的支援</h2>
+<ul>
+<li><a href="https://technet.microsoft.com/en-us/windows-server-docs/compute/hyper-v/supported-ubuntu-virtual-machines-on-hyper-v">https://technet.microsoft.com/en-us/windows-server-docs/compute/hyper-v/supported-ubuntu-virtual-machines-on-hyper-v</a></li>
+</ul>
+<ul>
+<li>創造新 Hyper-V VM 時，可以使用 Generation 2 VM</li>
+<li>取消 <code>Secure Boot</code></li>
+<li>因為此 Ubuntu VM  只用來測試，並無特殊需求，所以不需裝 <code>linux-virtual</code>
+等 package</li>
+</ul>
+<h1>安裝</h1>
+<p>將 VM 設定為 &quot;Boot from DVD Drive&quot;; 把 DVD Drive media  指向之前下載的
+.iso  後啟動 VM 就會進入安裝介面。</p>
+<p>安裝流程除了需要最基本的輸入外（選擇時區、語言、鍵盤語系；創造使用者），
+並沒有什麼要動腦之處。</p>
+<h2>安裝完成後必須手動 reboot VM</h2>
+<p>安裝完成後，系統會提醒使用者：</p>
+<blockquote>
+<p>Please remove the installation medium, then press ENTER</p>
+</blockquote>
+<p>但在此畫面按 <code>ENTER</code>  後，系統仍不會有後續動作。</p>
+<p>解決方法：從 Hyper-V Manager  手動 reboot 此 VM 。</p>
+<h2>其他</h2>
+<ul>
+<li>Docker: <a href="https://docs.docker.com/engine/installation/linux/ubuntu/">https://docs.docker.com/engine/installation/linux/ubuntu/</a>
+<ul>
+<li>https://hub.docker.com/r/microsoft/dotnet/</li>
+<li>https://hub.docker.com/_/postgres/</li>
+</ul>
+</li>
+<li>.NET Core on Docker: <a href="https://www.microsoft.com/net/core#dockercmd">https://www.microsoft.com/net/core#dockercmd</a></li>
+<li>PostSQL
+<ul>
+<li>https://www.postgresql.org/download/linux/ubuntu/</li>
+<li>https://help.ubuntu.com/community/PostgreSQL</li>
+<li>https://help.ubuntu.com/lts/serverguide/postgresql.html</li>
+</ul>
+</li>
+</ul>
+<h1>結論</h1>
+<p>不需要特別調整， Ubuntu Desktop 16.10 在 Hyper-V  上可順利安裝、運作。</p>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>ＣＳ： Ubuntu Desktop 16.10 on Windows 10 Hyper-V</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2017/02/24/ubuntu.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2017/02/24/ubuntu.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>
