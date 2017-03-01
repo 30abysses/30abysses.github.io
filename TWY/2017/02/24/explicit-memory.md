@@ -18,17 +18,31 @@
   * https://en.wikipedia.org/wiki/Testing_effect
 * 在相似的情境中，更容易想起記憶。
   * https://en.wikipedia.org/wiki/Encoding_specificity_principle
+* 從神經心理學的角度來看，記憶是一個自動、不需主動意識的過程（但記憶的深
+  淺取決於記憶編碼的方式）。
+
+
+##  心得感想
+
+* 「死背」是下策，應以「活用、應用」為主。
+
+
+##  延伸閱讀
+
 * https://en.wikipedia.org/wiki/Neurobiological_effects_of_physical_exercise#Cognitive_control_and_memory
 * https://en.wikipedia.org/wiki/Template:Memory
 * https://en.wikipedia.org/wiki/Learning_curve
+* https://en.wikipedia.org/wiki/Category:Memory_processes
 
-## https://en.wikipedia.org/wiki/Explicit_memory
+
+
+# https://en.wikipedia.org/wiki/Explicit_memory
 
 > the conscious, intentional recollection of factual information,
 > previous experiences and concepts.
 
 
-### Types
+## Types
 
 > episodic memory: memory of experiences and specific events that occur
 > during our lives
@@ -45,7 +59,7 @@
 > one's environment and its spatial orientation
 
 
-### Neuropsychology
+## Neuropsychology
 
 > Specific episodes are made easier to remember and recall by repeatedly
 > exposing oneself to them (which strengthens the links in the memory
@@ -54,12 +68,12 @@
 > remembering is an automatic process
 
 
-### Factors that affect declarative memory
+## Factors that affect declarative memory
 
 > Stress may have an effect on the recall of declarative memories.
 
 
-### Consolidation during sleep
+## Consolidation during sleep
 
 > It is believed that sleep plays an active role in consolidation of
 > declarative memory
@@ -73,7 +87,7 @@
 > enhances declarative memory consolidation
 
 
-### Encoding and retrieval
+## Encoding and retrieval
 
 > To create explicit memories, you have to do something with your
 > experiences: think about them, talk about them, write them down,
