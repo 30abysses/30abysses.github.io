@@ -9,15 +9,11 @@
 ##  實用資訊
 
 * 心理壓力不利於形成、回想外顯記憶。
-  * https://en.wikipedia.org/wiki/Stress_(biology)
 * 質量優良的睡眠對外顯記憶有助益；一說是睡眠對統整外顯記憶有幫助，另一說
   主張睡眠並不直接幫助統整外顯記憶，但塑造了心靈上寧靜而適合外顯記憶形成
   的環境。
-  * https://en.wikipedia.org/wiki/Sleep
 * 以多樣化方式使用記憶，會記得更牢。
-  * https://en.wikipedia.org/wiki/Testing_effect
 * 在相似的情境中，更容易想起記憶。
-  * https://en.wikipedia.org/wiki/Encoding_specificity_principle
 * 從神經心理學的角度來看，記憶是一個自動、不需主動意識的過程（但記憶的深
   淺取決於記憶編碼的方式）。
 
@@ -29,6 +25,10 @@
 
 ##  延伸閱讀
 
+* https://en.wikipedia.org/wiki/Stress_(biology)
+* https://en.wikipedia.org/wiki/Sleep
+* https://en.wikipedia.org/wiki/Testing_effect
+* https://en.wikipedia.org/wiki/Encoding_specificity_principle
 * https://en.wikipedia.org/wiki/Neurobiological_effects_of_physical_exercise#Cognitive_control_and_memory
 * https://en.wikipedia.org/wiki/Template:Memory
 * https://en.wikipedia.org/wiki/Learning_curve
