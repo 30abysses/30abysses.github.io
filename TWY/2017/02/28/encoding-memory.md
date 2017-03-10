@@ -6,7 +6,7 @@
 這篇是就記憶編碼(memory encoding) 的閱讀筆記整理。
 
 
-## 實用資訊
+##  實用資訊
 
 * 記憶編碼方式有視覺、聯想、聲音、語義、觸覺、組織。
 * 至今(2017-02-28)，記憶編碼的過程尚未被完整了解，但已知道記憶編碼的過程
@@ -55,7 +55,7 @@
   * 列舉(sequence memory):  能依照特定順序喚回記憶
 
 
-## 心得感想
+##  心得感想
 
 「死背」是不得已的下策，「活用、應用」才是善用「聯想記憶編碼」的良策。
 
@@ -82,7 +82,7 @@
   己的記憶。
 
 
-## 延伸閱讀
+##  延伸閱讀
 
 * https://en.wikipedia.org/wiki/Memory_rehearsal
 * https://en.wikipedia.org/wiki/Priming_(psychology)
