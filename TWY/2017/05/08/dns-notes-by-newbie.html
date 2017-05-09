@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>&#xFF23;&#xFF33;&#xFF1A;&#xFF24;&#xFF2E;&#xFF33;&#x5165;&#x9580;&#x7B46;&#x8A18; @ TWY 2017-05-08 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2017</a> / <a href="../index.html">05</a> / <a href="./index.html">08</a> / &#xFF23;&#xFF33;&#xFF1A;&#xFF24;&#xFF2E;&#xFF33;&#x5165;&#x9580;&#x7B46;&#x8A18;</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1>ＣＳ：ＤＮＳ入門筆記</h1>
+<p>除了在測試環境中架設管理過ＤＮＳ(Domain Name System)，在實戰環境中我只有
+初級使用者的經驗，這篇文章記錄一些實驗、學習心得。（參考文件連結記載於這
+篇文章未尾）。</p>
+<h2>基本原理</h2>
+<p>網路上有不少關於ＤＮＳ基本運作原理的的相關文章，以關鍵字去 Google 就能找
+到許多資料，例如：</p>
+<ul>
+<li>&quot;How does DNS work?&quot;</li>
+<li>&quot;authoritative vs. recursive DNS&quot;</li>
+<li>&quot;Start of Authority Record&quot; (SOA)</li>
+</ul>
+<h2>進階觀念</h2>
+<p>視專案需求不同，對ＤＮＳ的要求也會改變，可以從以下幾個角度考量：</p>
+<ul>
+<li>management, customization: 滿足管理、客製化需求的能力</li>
+<li>deployment, maintenance:  部署、維護的花費</li>
+<li>speed, reliability: 速度、可靠性</li>
+</ul>
+<p>就我觀察到的趨勢，各家網路服務商都是在往「提昇『滿足管理、客製化需求的能
+力』，吸收『部署、維護的花費』」的方向在走，是故就個人、中小型專案而言，
+能當作各家服務品質參考指標的就是「速度、可靠性」。</p>
+<p>理論上來說， Anycast DNS  （相對於 Unicast DNS  ）在負載平衡、可靠性、速
+度上佔優，但其部署、維護的花費也較高。除了從本地端使用 <code>ping</code>,
+<code>traceroute</code>  等指令來測試ＤＮＳ伺服器的速度外，網路上有免費工具可以從世
+界各地測試網路速度，例如：</p>
+<ul>
+<li><a href="https://asm.ca.com/en/ping.php">https://asm.ca.com/en/ping.php</a></li>
+<li><a href="https://asm.ca.com/en/traceroute.php">https://asm.ca.com/en/traceroute.php</a></li>
+</ul>
+<p>這個網站整理了世界各地提供線上 <code>traceroute</code> 工具的網頁清單：</p>
+<ul>
+<li><a href="http://www.traceroute.org/">http://www.traceroute.org/</a></li>
+</ul>
+<p>值得注意的是，如此測出來的數據只適合作為參考指標（而非絕對指標），最後還
+是要實地測試專案的整體效能，才能針對瓶頸改善，滿足實務上的需求。</p>
+<h3>Start of Authority (SOA)</h3>
+<p>SOA (Start of Authority)  ，如其名所述，是一網域名稱ＤＮＳ資訊的起點；當
+你從域名註冊商(domain name registrar) 設定網域名稱的ＤＮＳ主機資訊時，就
+是在設定該網域的 SOA  紀錄，而一個網域的 SOA  紀錄可以 <code>nslookup</code>, <code>dig</code>
+這些指令查詢（或使用網路上各式的免費ＤＮＳ分析工具），例如：</p>
+<pre><code>$ dig example.com SOA
+
+; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-Ubuntu &lt;&lt;&gt;&gt; example.com SOA
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 60805
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;example.com.                   IN      SOA
+
+;; ANSWER SECTION:
+example.com.            3600    IN      SOA     sns.dns.icann.org. noc.dns.icann.org. 2017042703 7200 3600 1209600 3600
+
+;; Query time: 12 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Tue May 09 12:35:34 PDT 2017
+;; MSG SIZE  rcvd: 97
+
+$ nslookup -querytype=SOA stackoverflow.com
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+stackoverflow.com
+        origin = ns-cloud-e1.googledomains.com
+        mail addr = cloud-dns-hostmaster.google.com
+        serial = 1
+        refresh = 21600
+        retry = 3600
+        expire = 259200
+        minimum = 300
+
+Authoritative answers can be found from:
+</code></pre>
+<p>可以看到 <code>example.com</code>  的 SOA  是 <code>sns.dns.icann.org</code> ；
+<code>stackoverflow.com</code> 的 SOA  是 <code>ns-cloud-e1.googledomains.com</code>  。</p>
+<h1>結論</h1>
+<p>今日的個人、中小專案開發者大約只需要照著各網路服務商提供的文件，就能搞定
+SOA 與各種ＤＮＳ設定、管理；而佈署、維護這些雜務則多是由網路服務商（收費
+）代辦，讓開發者能專注於診斷分析效能瓶頸，滿足專案需求。</p>
+<h1>參考文件</h1>
+<h2>Overview</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#Function">Function</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#Structure">Structure</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#Operation">Operation</a></li>
+</ul>
+<h2>Authoritative vs. Recursive</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#Authoritative_name_server">Authoritative Name Server</a>
+<ul>
+<li><a href="http://www.inetdaemon.com/tutorials/internet/dns/configuration/zone_files/resource_records/soa.shtml">Start of Authority Record (SOA)</a>
+<ul>
+<li><a href="https://support.dnsimple.com/articles/soa-record/">What is a SOA record?</a></li>
+</ul>
+</li>
+<li><a href="http://www.inetdaemon.com/tutorials/internet/dns/configuration/zone_files/index.shtml">DNS Zone Files</a></li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System#Recursive_and_caching_name_server">Recursive Name Server</a></li>
+<li><a href="http://www.noip.com/blog/2013/11/22/authoritative-dns-vs-recursive-dns-work/">Authoritative DNS Servers vs. Recursive DNS Servers</a></li>
+</ul>
+<h2>Anycast vs. Unicast</h2>
+<ul>
+<li><a href="http://ddiguru.com/blog/118-introduction-to-anycast-dns">Anycast DNS - Part 1, Overview</a></li>
+<li><a href="https://serverfault.com/questions/14985/what-is-anycast-and-how-is-it-helpful">What is “anycast” and how is it helpful?</a></li>
+</ul>
+<h2>DNS Record Types</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a></li>
+</ul>
+<blockquote>
+<p>The most common types of records stored in the DNS database are for
+Start of Authority (SOA), IP addresses (A and AAAA), SMTP mail
+exchangers (MX), name servers (NS), pointers for reverse DNS lookups
+(PTR), and domain name aliases (CNAME). Although not intended to be a
+general purpose database, DNS can store records for other types of
+data for either automatic lookups, such as DNSSEC records, or for
+human queries such as responsible person (RP) records.</p>
+<p>https://en.wikipedia.org/wiki/Domain_Name_System</p>
+</blockquote>
+<h2>Online Tools</h2>
+<ul>
+<li><a href="http://www.dnssy.com/">http://www.dnssy.com/</a></li>
+<li><a href="https://mxtoolbox.com/NetworkTools.aspx">https://mxtoolbox.com/NetworkTools.aspx</a></li>
+<li><a href="http://dns.squish.net/">http://dns.squish.net/</a></li>
+<li><a href="https://asm.ca.com/en/dnstool.php">https://asm.ca.com/en/dnstool.php</a></li>
+<li><a href="http://www.traceroute.org/">http://www.traceroute.org/</a></li>
+</ul>
+<h2>Local Tools</h2>
+<pre><code>nslookup -querytype=SOA example.com
+
+dig example.com any
+</code></pre>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>ＣＳ：ＤＮＳ入門筆記</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2017/05/08/dns-notes-by-newbie.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2017/05/08/dns-notes-by-newbie.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>
