@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>&#xFF23;&#xFF33;&#xFF1A; Ubuntu, SSH server @ TWY 2017-05-06 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2017</a> / <a href="../index.html">05</a> / <a href="./index.html">06</a> / &#xFF23;&#xFF33;&#xFF1A; Ubuntu, SSH server</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1>ＣＳ： Ubuntu, SSH server</h1>
+<p>這篇筆記是實驗在 Ubuntu Desktop 17.04 (on Windows 10 Hyper-V) 設定 SSH
+server  與在 Windows  上使用 PuTTY  作為 SSH client 的組合。</p>
+<p>在網路上已經有許多教學文件，這篇筆記的重點在於實驗、測試結果。</p>
+<h2>安裝 <code>openssh-server</code></h2>
+<pre><code>sudo apt-get install openssh-server
+</code></pre>
+<h2>修改 <code>/etc/ssh/sshd_config</code> 設定</h2>
+<ul>
+<li><code>/etc/ssh/sshd_config</code>  是一個文字檔；許多教學文件都建議在更動
+<code>sshd_config</code> 前先複製備份一份。</li>
+<li>更動 <code>sshd_config</code>  後，以 <code>sudo systemctl restart ssh</code> 重新啟動 SSH
+server  。</li>
+</ul>
+<p><code>sshd_config</code> 的內容並不難懂，許多教學文件原則上都會建議關掉
+<code>PasswordAuthentication</code>  以及用不到的各種 forwarding 功能（例如
+<code>AllowTcpForwarding</code>  ）。</p>
+<h2>從 Windows  以 PuTTY  測試 SSH server</h2>
+<p>在 Windows  啟動 PuTTY  以 SSH  模式連上在上述步驟裡安裝、設定好的
+SSH server  。</p>
+<ul>
+<li>從 Ubuntu 本地端（從 Hyper-V Manager  連上），執行 <code>ip address show</code>
+可以取得 Ubuntu VM  的 IP address 。</li>
+<li>從 <code>/etc/ssh/sshd_config</code> 可以看到 SSH server 開啟的 port （預設為
+<code>22</code>  ），也可以看到預設的 <code>HostKey</code>  檔案路徑（預設為 <code>/etc/ssh/</code>  目
+錄下的各個 <code>ssh_host_*_key</code> 檔案）。</li>
+</ul>
+<p>若一切運作正常的話， PuTTY  會回報 SSH server 的 host key （以及其編碼方
+式），並詢問你是否能信任該 host key ；接下來就是要驗證該 host key 。</p>
+<h3>驗證 SSH server host key</h3>
+<p>根據 PuTTY  回報的 SSH server host key  以及其編碼方式，我們應該可以在
+Ubuntu  主機上的 <code>/etc/ssh/</code>  目錄下找到對應的 <code>ssh_host_*_key.pub</code> 檔案
+。</p>
+<p>這些 <code>ssh_host_*_key.pub</code> 檔案是文字檔，但其 key  的部分的 hash 編碼不見
+得與 PuTTY  回報的 hash 編碼相同。可以用以下指令印出其 key  的 SHA256 或
+MD5 hash  值（在這個例子中，使用的是 <code>ssh_host_rsa_key.pub</code> ；實務上，
+PuTTY 回報的有可能是 <code>ecdsa</code>  或 <code>ed25519</code>  的編碼，依 PuTTY  回報的訊息
+調整指令即可）：</p>
+<pre><code>ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub
+
+ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub -E md5
+</code></pre>
+<p>如果 PuTTY  回報的 SSH server host key  符合從 Ubuntu 本地端看到的
+host key, 那就可以讓 PuTTY  信任該 host key 。</p>
+<p>實務上， PuTTY  會把被信任的 host key 存在 Windows Registry 裡，可以以下
+指令查詢：</p>
+<pre><code>reg query HKCU\Software\SimonTatham\PuTTY\SshHostKeys
+</code></pre>
+<h1>結論</h1>
+<p>剩下的步驟就是在 Windows  上使用 <code>puttygen.exe</code> 產生 public+private keys
+，然後設定 <code>~/.ssh/authorized_keys</code> 。詳細的教學可以看這兩份文件：</p>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users">How To Use SSH Keys with PuTTY on DigitalOcean Droplets (Windows users)</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-ssh-keys-with-putty-to-connect-to-a-vps">How To Create SSH Keys With PuTTY to Connect to a VPS</a></li>
+</ul>
+<p>唯一要注意的，就是 <code>puttygen.exe</code> 在 GUI  上列出的 public key 與其
+<code>Save public key</code> 存成檔案的 public key 格式不同。而適用於
+<code>~/.ssh/authorized_keys</code>  的是「<code>puttygen.exe</code> 在 GUI  上列出的
+public key  」。</p>
+<p>如果誤用了「<code>Save public key</code> 存成檔案的 public key 」，那麼在 PuTTY  連
+線時會傳回 &quot;server refused our key&quot; 錯誤；只要更正
+<code>~/.ssh/authorized_keys</code>  裡的 public key 格式就可修復。</p>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>ＣＳ： Ubuntu, SSH server</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2017/05/06/ubuntu-openssh-ssh-server-windows-putty-ssh-client.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2017/05/06/ubuntu-openssh-ssh-server-windows-putty-ssh-client.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>

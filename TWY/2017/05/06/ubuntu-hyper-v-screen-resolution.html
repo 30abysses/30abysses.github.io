@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+
+
+
+<head>
+    <title>&#xFF23;&#xFF33;&#xFF1A; Ubuntu on Hyper-V, &#x87A2;&#x5E55;&#x89E3;&#x6790;&#x5EA6; @ TWY 2017-05-06 @ 30abysses (&#x5345;&#x6DF5;)</title>
+    <meta charset="UTF-8"/>
+    <meta name="google-site-verification" content="eBAoVRMR5HJ_T63KMbastDcthuaYPEfvdzPTCSMoldo"/>
+    <link href="../../../../.assets/30abysses.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../../.assets/google-analytics.js"></script>
+</head>
+
+
+
+<body>
+
+
+
+<div class="center-block">
+    <div lang="en"><code><a href="../../../../index.html">www.30abysses.com</a> / <a href="../../../index.html">TWY</a> / <a href="../../index.html">2017</a> / <a href="../index.html">05</a> / <a href="./index.html">06</a> / &#xFF23;&#xFF33;&#xFF1A; Ubuntu on Hyper-V, &#x87A2;&#x5E55;&#x89E3;&#x6790;&#x5EA6;</code></div>
+    <script src="../../../../.assets/google-custom-search-engine.js"></script>
+    <gcse:search></gcse:search>
+</div>
+<br/>
+
+
+
+<div class="center-text"><svg width="244" height="214">
+    <polygon points="10,107 66,10 178,10 234,107 178,204 66,204" style="fill:none; stroke:black; stroke-width:1" stroke-dasharray="2"/>
+    <polyline points="94,59 38,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="66,107 94,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="150,59 178,107" style="stroke:black; stroke-width:5"/>
+    <polyline points="206,59 150,156" style="stroke:black; stroke-width:5"/>
+    <polyline points="94,59 150,59" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+    <polyline points="94,156 150,156" style="stroke:black; stroke-width:1" stroke-dasharray="1"/>
+</svg>
+</div>
+<br/>
+
+
+
+<div class="center-text" lang="en"><code>BALANCE and EQUILIBRIUM</code></div>
+<br/>
+
+
+
+<div class="center-block"><hr/><br/></div>
+<div class="center-block"><h1>ＣＳ： Ubuntu on Hyper-V, 螢幕解析度</h1>
+<p>這篇是在 Windows 10 上用 Hyper-V  跑 Ubuntu Desktop 17.04,  更改螢幕解析
+度的筆記。</p>
+<p>Ubuntu  在 Hyper-V  上預設的的螢幕解析度只有 1152x864 ，以
+&quot;ubuntu Hyper-V screen resolution&quot;  等關鍵字 Google 後會發現這是個ＦＡＱ
+，解決方法大致上是：</p>
+<ol>
+<li>安裝 VM driver  。</li>
+<li>更改 <code>/etc/default/grub</code>  設定。</li>
+<li>執行 <code>update-grub</code>  。</li>
+<li>Reboot Ubuntu VM  。</li>
+</ol>
+<h2>安裝 VM driver</h2>
+<p>以 <code>apt list --installed linux*</code>  指令可以列出已安裝的相關套件；在 VM 環
+境裡需要加裝 <code>linux-image-extra-virtual</code>  ，指令如下：</p>
+<pre><code>sudo apt-get install linux-image-extra-virtual
+</code></pre>
+<h2>更改 <code>/etc/default/grub</code>  設定</h2>
+<p>在 <code>GRUB_CMDLINE_LINUX_DEFAULT</code> 加入 <code>video=hyperv_fb:1920x1080</code>  ，例如
+：</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;
+</code></pre>
+<h3><code>1920x1080</code> 是 Ubuntu 在 Hyper-V  螢幕解析度的上限。</h3>
+<p>Ubuntu 17.04  的 <a href="https://wiki.ubuntu.com/ZestyZapus/ReleaseNotes">ReleaseNotes</a>  記載它使用 Linux kernel 4.10  ；
+<code>1920x1080</code> 這個神奇數字來自於原始碼中的註解：</p>
+<p><a href="https://github.com/torvalds/linux/blob/v4.10/drivers/video/fbdev/hyperv_fb.c#L18-L35">https://github.com/torvalds/linux/blob/v4.10/drivers/video/fbdev/hyperv_fb.c#L18-L35</a></p>
+<pre><code>/*
+ * Hyper-V Synthetic Video Frame Buffer Driver
+ *
+ * This is the driver for the Hyper-V Synthetic Video, which supports
+ * screen resolution up to Full HD 1920x1080 with 32 bit color on Windows
+ * Server 2012, and 1600x1200 with 16 bit color on Windows Server 2008 R2
+ * or earlier.
+ *
+ * It also solves the double mouse cursor issue of the emulated video mode.
+ *
+ * The default screen resolution is 1152x864, which may be changed by a
+ * kernel parameter:
+ *     video=hyperv_fb:&lt;width&gt;x&lt;height&gt;
+ *     For example: video=hyperv_fb:1280x1024
+ *
+ * Portrait orientation is also supported:
+ *     For example: video=hyperv_fb:864x1152
+ */
+</code></pre>
+<h2>執行 <code>update-grub</code></h2>
+<pre><code>sudo update-grub
+</code></pre>
+<h2>Reboot Ubuntu VM</h2>
+<pre><code>shutdown -r
+</code></pre>
+<h1>結論</h1>
+<p>重開機(reboot)之後，此 Ubunbu (on Hyper-V)  應該就會以新設定的螢幕解析度
+（在這個例子中是 1920x1080  ）取代預設的 1152x864 。</p>
+</div>
+<div class="center-block"><br/><hr/></div>
+
+
+
+<!-- footer -->
+<div class="center-text" lang="en">
+
+    <!-- contact us -->
+    <p>
+        <code>
+            [
+            Contact us
+            |
+            <a href="https://www.facebook.com/30abysses/">facebook</a>
+            |
+            <a href="mailto:hello@30abysses.com">hello@30abysses.com</a>
+            |
+            聯絡我們
+            ]
+        </code>
+    </p>
+    <br/>
+
+    <!-- license -->
+    <section>
+        <p>
+            <small>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><code>ＣＳ： Ubuntu on Hyper-V, 螢幕解析度</code></span>
+                by
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.30abysses.com/TWY/2017/05/06/ubuntu-hyper-v-screen-resolution.md" property="cc:attributionName" rel="cc:attributionURL"><a href="http://www.30abysses.com/TWY/2017/05/06/ubuntu-hyper-v-screen-resolution.md">TW Yang &lt;twy@30abysses.com&gt;</a></a>
+                <br/>
+                is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                <code>(CC-BY-4.0)</code>.
+            </small>
+        </p>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License (CC-BY-4.0)" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+        </p>
+    </section>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>
